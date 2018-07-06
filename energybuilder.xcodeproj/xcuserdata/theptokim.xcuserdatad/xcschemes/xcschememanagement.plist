@@ -7,7 +7,25 @@
 		<key>energybuilder.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>873CAA2A20D36607007912EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>873CAA3E20D36609007912EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>873CAA4920D36609007912EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

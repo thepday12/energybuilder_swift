@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "DataCaptureViewCell.createViewDropdown():DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "objectAttr">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Route.init(key:json:):AllModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;total&quot;] as String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewController.loadDataFromDataObjects(dateValue:):DataCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dataObjects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewCell.endEditValue(_:):DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "index">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RoutesViewController.initNavigationBar(menuRight:):RoutesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.revealViewController() != nil">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PointViewController.setCompletePoint(complete:):PointViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "route">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewCell.createField(type:index:objectAttr:objectData:):DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " item.value as! [String:String]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "storyBoard">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseController.handlerUpload():BaseController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewCell.createField(objectAttr:listValue:):DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "objectAttr.name">
+            </PersistentString>
+            <PersistentString
+               value = "objectAttr">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in uploadDataHandler(viewController:dataUpload:isDismiss:):NetworkHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getDataTypeString()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ObjectAttrs.init(key:json:listValues:):AllModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;lists&quot;] as![String:Any]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailRouteViewController.viewDidLoad():DetailRouteViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listPoints">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RoutesViewController.viewDidAppear(_:):RoutesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;routes&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.clickLogin(_:):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "actionName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "setDataConfig(data:objectDetail:):Utils.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewCell.createField(objectAttr:):DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "objectAttr.controlType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "getObjectDetail():Utils.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;object_details&quot;]  as![String:Any]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.clickDownloadConfig(_:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userToken">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ObjectData.init(key:json:listValues:):AllModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isEU()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewCell.createField(index:objectAttr:listValue:):DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "objectAttr.key">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewController.tableView(_:cellForRowAt:):DataCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listObjectAttr">
+            </PersistentString>
+            <PersistentString
+               value = "object">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewCell.createField(type:index:objectAttr:):DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "objectAttr">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewController.viewDidLoad():DataCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "point.objects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PointViewController.completeClick(_:):PointViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(json[&quot;points&quot;] as![String:Any]) [self.point.key]as![String:Any])[&quot;complete&quot;] as! Bool">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Point.init(key:json:):AllModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;FL&quot;] as String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailRouteViewCell.itemClick(_:):DetailRouteViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "objects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewController.saveClick(_:):DataCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[id]">
+            </PersistentString>
+            <PersistentString
+               value = "value[&quot;COMMENT&quot;] as! String">
+            </PersistentString>
+            <PersistentString
+               value = "data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ObjectAttrs.init(key:json:):AllModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in DialogNumberChart.showChart():DialogNumberChart.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "labels">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PointViewCell.itemClick(_:):PointViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "objects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DialogNumberChart.viewDidLoad():DialogNumberChart.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listValue[i].value.doubleValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PointViewController.viewDidLoad():PointViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "point">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewController.loadDataFromDataObjects():DataCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "date.value">
+            </PersistentString>
+            <PersistentString
+               value = "listObjectAttr[0].value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewCell.createField(type:index:objectAttr:listValue:):DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "objectAttr.objectData.listPhase.length">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RoutesViewController.viewDidLoad():RoutesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;points&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewController.updateValue(index:object:):DataCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listObjectAttr[1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RoutesViewController.tableView(_:cellForRowAt:):RoutesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.routeId == object.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in downloadConfigHandler(viewController:isDismiss:):NetworkHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;object_details&quot;] ">
+            </PersistentString>
+            <PersistentString
+               value = "let json = try? JSONSerialization.jsonObject(with: data) as![String:Any]">
+            </PersistentString>
+            <PersistentString
+               value = "p1[&quot;FL&quot;] as String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseController.initNavigationBar(menuRight:):BaseController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.revealViewController().panGestureRecognizer().isEnabled">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in uploadDataHandler(viewController:isDismiss:):NetworkHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "jsonString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "uploadDataHandler(viewController:isDismiss:):NetworkHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dataUpload">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RoutesCell.updateView(route:):RoutesCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "route.getIntTotal()">
+            </PersistentString>
+            <PersistentString
+               value = "route.complete*100/3">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

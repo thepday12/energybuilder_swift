@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70EC413ACA42579DB81A473C /* Pods_energybuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 963701853C42656141E92550 /* Pods_energybuilder.framework */; };
+		8705C77620D65E9A00C9496F /* RoutesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705C77520D65E9A00C9496F /* RoutesCell.swift */; };
+		8705C77920D66F8F00C9496F /* AllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705C77820D66F8F00C9496F /* AllModel.swift */; };
+		870B1D6C20D3C3CF004DA1B4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870B1D6B20D3C3CF004DA1B4 /* Extension.swift */; };
+		87275DA720D53C1D008AA626 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87275DA620D53C1D008AA626 /* LoginViewController.swift */; };
+		87275DA920D53DA2008AA626 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87275DA820D53DA2008AA626 /* NetworkHelper.swift */; };
+		8737E07520D3714500DEEAEF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737E07420D3714500DEEAEF /* Utils.swift */; };
+		8737E07720D37C8C00DEEAEF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737E07620D37C8C00DEEAEF /* SettingsViewController.swift */; };
 		873CAA2F20D36607007912EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CAA2E20D36607007912EF /* AppDelegate.swift */; };
 		873CAA3120D36607007912EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CAA3020D36607007912EF /* ViewController.swift */; };
 		873CAA3420D36607007912EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873CAA3220D36607007912EF /* Main.storyboard */; };
@@ -14,6 +22,18 @@
 		873CAA3920D36609007912EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873CAA3720D36609007912EF /* LaunchScreen.storyboard */; };
 		873CAA4420D36609007912EF /* energybuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CAA4320D36609007912EF /* energybuilderTests.swift */; };
 		873CAA4F20D36609007912EF /* energybuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CAA4E20D36609007912EF /* energybuilderUITests.swift */; };
+		873CAA5D20D36AD5007912EF /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 873CAA5C20D36AD5007912EF /* podfile */; };
+		873CE29020D39A8200489059 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CE28F20D39A8200489059 /* SWRevealViewController.m */; };
+		873CE29320D39FE300489059 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CE29220D39FE300489059 /* RightViewController.swift */; };
+		873CE29520D3A22000489059 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CE29420D3A22000489059 /* BaseController.swift */; };
+		873CE29720D3A4A000489059 /* RoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CE29620D3A4A000489059 /* RoutesViewController.swift */; };
+		8773100220D798280077820B /* DataCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773100120D798280077820B /* DataCaptureViewController.swift */; };
+		87B3BD2920D7549000BAC4D1 /* DetailRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3BD2820D7549000BAC4D1 /* DetailRouteViewController.swift */; };
+		87B3BD2C20D755FA00BAC4D1 /* DetailRouteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3BD2B20D755FA00BAC4D1 /* DetailRouteViewCell.swift */; };
+		87B3BD2F20D769D500BAC4D1 /* PointViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3BD2E20D769D500BAC4D1 /* PointViewCell.swift */; };
+		87B3BD3220D769FF00BAC4D1 /* DataCaptureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3BD3120D769FF00BAC4D1 /* DataCaptureViewCell.swift */; };
+		87B3BD3420D76A1700BAC4D1 /* PointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3BD3320D76A1700BAC4D1 /* PointViewController.swift */; };
+		87CF7D9820EE0C5400876882 /* DialogNumberChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF7D9720EE0C5400876882 /* DialogNumberChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +54,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8705C77520D65E9A00C9496F /* RoutesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesCell.swift; sourceTree = "<group>"; };
+		8705C77820D66F8F00C9496F /* AllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllModel.swift; sourceTree = "<group>"; };
+		870B1D6B20D3C3CF004DA1B4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		87275DA620D53C1D008AA626 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		87275DA820D53DA2008AA626 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		8737E07420D3714500DEEAEF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		8737E07620D37C8C00DEEAEF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		873CAA2B20D36607007912EF /* energybuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = energybuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873CAA2E20D36607007912EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		873CAA3020D36607007912EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +74,23 @@
 		873CAA4A20D36609007912EF /* energybuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = energybuilderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		873CAA4E20D36609007912EF /* energybuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = energybuilderUITests.swift; sourceTree = "<group>"; };
 		873CAA5020D36609007912EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		873CAA5C20D36AD5007912EF /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		873CE28E20D39A8100489059 /* energybuilder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "energybuilder-Bridging-Header.h"; sourceTree = "<group>"; };
+		873CE28F20D39A8200489059 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		873CE29120D39A9900489059 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		873CE29220D39FE300489059 /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		873CE29420D3A22000489059 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		873CE29620D3A4A000489059 /* RoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesViewController.swift; sourceTree = "<group>"; };
+		8773100120D798280077820B /* DataCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCaptureViewController.swift; sourceTree = "<group>"; };
+		87B3BD2820D7549000BAC4D1 /* DetailRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouteViewController.swift; sourceTree = "<group>"; };
+		87B3BD2B20D755FA00BAC4D1 /* DetailRouteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouteViewCell.swift; sourceTree = "<group>"; };
+		87B3BD2E20D769D500BAC4D1 /* PointViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointViewCell.swift; sourceTree = "<group>"; };
+		87B3BD3120D769FF00BAC4D1 /* DataCaptureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCaptureViewCell.swift; sourceTree = "<group>"; };
+		87B3BD3320D76A1700BAC4D1 /* PointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointViewController.swift; sourceTree = "<group>"; };
+		87CF7D9720EE0C5400876882 /* DialogNumberChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogNumberChart.swift; sourceTree = "<group>"; };
+		963701853C42656141E92550 /* Pods_energybuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_energybuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B5B8F2CD6AF90AA089439A /* Pods-energybuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-energybuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-energybuilder/Pods-energybuilder.release.xcconfig"; sourceTree = "<group>"; };
+		D826FE568B01D921A2B7C657 /* Pods-energybuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-energybuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-energybuilder/Pods-energybuilder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EC413ACA42579DB81A473C /* Pods_energybuilder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +119,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71D923B97A2BC779721D82BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D826FE568B01D921A2B7C657 /* Pods-energybuilder.debug.xcconfig */,
+				A5B5B8F2CD6AF90AA089439A /* Pods-energybuilder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8705C77220D6411C00C9496F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				87B3BD3020D769EA00BAC4D1 /* data_capture */,
+				87B3BD2D20D769B500BAC4D1 /* point */,
+				87B3BD2A20D755D100BAC4D1 /* detail_route */,
+				8705C77420D65E6100C9496F /* routes */,
+				873CAA3020D36607007912EF /* ViewController.swift */,
+				8737E07620D37C8C00DEEAEF /* SettingsViewController.swift */,
+				873CE29420D3A22000489059 /* BaseController.swift */,
+				87275DA620D53C1D008AA626 /* LoginViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8705C77320D6413F00C9496F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				8737E07420D3714500DEEAEF /* Utils.swift */,
+				870B1D6B20D3C3CF004DA1B4 /* Extension.swift */,
+				87275DA820D53DA2008AA626 /* NetworkHelper.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		8705C77420D65E6100C9496F /* routes */ = {
+			isa = PBXGroup;
+			children = (
+				873CE29620D3A4A000489059 /* RoutesViewController.swift */,
+				8705C77520D65E9A00C9496F /* RoutesCell.swift */,
+			);
+			path = routes;
+			sourceTree = "<group>";
+		};
+		8705C77720D66F7800C9496F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8705C77820D66F8F00C9496F /* AllModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		873CAA2220D36607007912EF = {
 			isa = PBXGroup;
 			children = (
+				873CE28D20D39A3900489059 /* SupportingFiles */,
+				873CAA5C20D36AD5007912EF /* podfile */,
 				873CAA2D20D36607007912EF /* energybuilder */,
 				873CAA4220D36609007912EF /* energybuilderTests */,
 				873CAA4D20D36609007912EF /* energybuilderUITests */,
 				873CAA2C20D36607007912EF /* Products */,
+				71D923B97A2BC779721D82BD /* Pods */,
+				E06CCC9A87E76FA2D080835E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +197,15 @@
 		873CAA2D20D36607007912EF /* energybuilder */ = {
 			isa = PBXGroup;
 			children = (
+				8705C77720D66F7800C9496F /* model */,
+				8705C77320D6413F00C9496F /* utils */,
+				8705C77220D6411C00C9496F /* view */,
 				873CAA2E20D36607007912EF /* AppDelegate.swift */,
-				873CAA3020D36607007912EF /* ViewController.swift */,
 				873CAA3220D36607007912EF /* Main.storyboard */,
 				873CAA3520D36609007912EF /* Assets.xcassets */,
 				873CAA3720D36609007912EF /* LaunchScreen.storyboard */,
 				873CAA3A20D36609007912EF /* Info.plist */,
+				873CE29220D39FE300489059 /* RightViewController.swift */,
 			);
 			path = energybuilder;
 			sourceTree = "<group>";
@@ -125,6 +228,52 @@
 			path = energybuilderUITests;
 			sourceTree = "<group>";
 		};
+		873CE28D20D39A3900489059 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				873CE29120D39A9900489059 /* SWRevealViewController.h */,
+				873CE28F20D39A8200489059 /* SWRevealViewController.m */,
+				873CE28E20D39A8100489059 /* energybuilder-Bridging-Header.h */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		87B3BD2A20D755D100BAC4D1 /* detail_route */ = {
+			isa = PBXGroup;
+			children = (
+				87B3BD2820D7549000BAC4D1 /* DetailRouteViewController.swift */,
+				87B3BD2B20D755FA00BAC4D1 /* DetailRouteViewCell.swift */,
+			);
+			path = detail_route;
+			sourceTree = "<group>";
+		};
+		87B3BD2D20D769B500BAC4D1 /* point */ = {
+			isa = PBXGroup;
+			children = (
+				87B3BD2E20D769D500BAC4D1 /* PointViewCell.swift */,
+				87B3BD3320D76A1700BAC4D1 /* PointViewController.swift */,
+			);
+			path = point;
+			sourceTree = "<group>";
+		};
+		87B3BD3020D769EA00BAC4D1 /* data_capture */ = {
+			isa = PBXGroup;
+			children = (
+				87B3BD3120D769FF00BAC4D1 /* DataCaptureViewCell.swift */,
+				8773100120D798280077820B /* DataCaptureViewController.swift */,
+				87CF7D9720EE0C5400876882 /* DialogNumberChart.swift */,
+			);
+			path = data_capture;
+			sourceTree = "<group>";
+		};
+		E06CCC9A87E76FA2D080835E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				963701853C42656141E92550 /* Pods_energybuilder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +281,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 873CAA5320D36609007912EF /* Build configuration list for PBXNativeTarget "energybuilder" */;
 			buildPhases = (
+				EBFF5BCD23D69264BCA42ECC /* [CP] Check Pods Manifest.lock */,
 				873CAA2720D36607007912EF /* Sources */,
 				873CAA2820D36607007912EF /* Frameworks */,
 				873CAA2920D36607007912EF /* Resources */,
+				2D1A88EA9583F56553385E81 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +344,7 @@
 				TargetAttributes = {
 					873CAA2A20D36607007912EF = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					873CAA3E20D36609007912EF = {
 						CreatedOnToolsVersion = 9.4;
@@ -231,6 +383,7 @@
 			files = (
 				873CAA3920D36609007912EF /* LaunchScreen.storyboard in Resources */,
 				873CAA3620D36609007912EF /* Assets.xcassets in Resources */,
+				873CAA5D20D36AD5007912EF /* podfile in Resources */,
 				873CAA3420D36607007912EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,13 +404,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D1A88EA9583F56553385E81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-energybuilder/Pods-energybuilder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-energybuilder/Pods-energybuilder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBFF5BCD23D69264BCA42ECC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-energybuilder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		873CAA2720D36607007912EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870B1D6C20D3C3CF004DA1B4 /* Extension.swift in Sources */,
+				87CF7D9820EE0C5400876882 /* DialogNumberChart.swift in Sources */,
+				8705C77620D65E9A00C9496F /* RoutesCell.swift in Sources */,
 				873CAA3120D36607007912EF /* ViewController.swift in Sources */,
+				87B3BD2F20D769D500BAC4D1 /* PointViewCell.swift in Sources */,
 				873CAA2F20D36607007912EF /* AppDelegate.swift in Sources */,
+				8705C77920D66F8F00C9496F /* AllModel.swift in Sources */,
+				8773100220D798280077820B /* DataCaptureViewController.swift in Sources */,
+				873CE29520D3A22000489059 /* BaseController.swift in Sources */,
+				87B3BD2C20D755FA00BAC4D1 /* DetailRouteViewCell.swift in Sources */,
+				87275DA920D53DA2008AA626 /* NetworkHelper.swift in Sources */,
+				87B3BD3420D76A1700BAC4D1 /* PointViewController.swift in Sources */,
+				873CE29020D39A8200489059 /* SWRevealViewController.m in Sources */,
+				8737E07520D3714500DEEAEF /* Utils.swift in Sources */,
+				8737E07720D37C8C00DEEAEF /* SettingsViewController.swift in Sources */,
+				873CE29720D3A4A000489059 /* RoutesViewController.swift in Sources */,
+				87B3BD2920D7549000BAC4D1 /* DetailRouteViewController.swift in Sources */,
+				87B3BD3220D769FF00BAC4D1 /* DataCaptureViewCell.swift in Sources */,
+				87275DA720D53C1D008AA626 /* LoginViewController.swift in Sources */,
+				873CE29320D39FE300489059 /* RightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,17 +648,22 @@
 		};
 		873CAA5420D36609007912EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D826FE568B01D921A2B7C657 /* Pods-energybuilder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LNG98LLVZF;
 				INFOPLIST_FILE = energybuilder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edv2.energybuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/energybuilder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -446,17 +671,21 @@
 		};
 		873CAA5520D36609007912EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5B5B8F2CD6AF90AA089439A /* Pods-energybuilder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LNG98LLVZF;
 				INFOPLIST_FILE = energybuilder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edv2.energybuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/energybuilder-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
