@@ -199,6 +199,7 @@
                                                     <segment title="FDC value"/>
                                                     <segment title="Standard value"/>
                                                 </segments>
+                                                <color key="tintColor" red="0.082352941176470587" green="0.49411764705882355" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days to load history data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M2-8D-lAv">
                                                 <rect key="frame" x="0.0" y="156" width="335" height="21"/>
@@ -307,7 +308,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATA CAPTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQf-2f-Lvf">
-                                <rect key="frame" x="20" y="60" width="335" height="21.5"/>
+                                <rect key="frame" x="20" y="50" width="335" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -350,6 +351,9 @@
                                         <state key="normal" title="CLEAR DATA">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clickClear:" destination="QFr-Ez-enY" eventType="touchUpInside" id="X9N-nM-0iW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-JK-5dd">
                                         <rect key="frame" x="0.0" y="280" width="335" height="40"/>
@@ -379,23 +383,23 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EnergyBuilder Data Capture powered by eDataViz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxF-Fp-ct1">
-                                <rect key="frame" x="20" y="632.5" width="335" height="14.5"/>
+                                <rect key="frame" x="20" y="642.5" width="335" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.4909854531288147" green="0.79753625392913818" blue="0.77016955614089966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.49019607843137253" green="0.79607843137254897" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gBT-fm-JFN" firstAttribute="trailing" secondItem="jP7-6C-h4o" secondAttribute="trailing" constant="20" id="6CS-BN-wP1"/>
                             <constraint firstItem="jP7-6C-h4o" firstAttribute="leading" secondItem="gBT-fm-JFN" secondAttribute="leading" constant="20" id="HMX-fw-mDI"/>
                             <constraint firstItem="jxF-Fp-ct1" firstAttribute="leading" secondItem="gBT-fm-JFN" secondAttribute="leading" constant="20" id="Jww-Sg-imT"/>
                             <constraint firstItem="gBT-fm-JFN" firstAttribute="trailing" secondItem="PQf-2f-Lvf" secondAttribute="trailing" constant="20" id="LY0-KQ-5gx"/>
                             <constraint firstItem="jP7-6C-h4o" firstAttribute="centerY" secondItem="8R2-E6-kuu" secondAttribute="centerY" id="RKW-y3-Sxc"/>
-                            <constraint firstItem="gBT-fm-JFN" firstAttribute="bottom" secondItem="jxF-Fp-ct1" secondAttribute="bottom" constant="20" id="Teq-c0-V5h"/>
+                            <constraint firstItem="gBT-fm-JFN" firstAttribute="bottom" secondItem="jxF-Fp-ct1" secondAttribute="bottom" constant="10" id="Teq-c0-V5h"/>
                             <constraint firstItem="PQf-2f-Lvf" firstAttribute="leading" secondItem="gBT-fm-JFN" secondAttribute="leading" constant="20" id="Xf3-a3-zT6"/>
                             <constraint firstItem="gBT-fm-JFN" firstAttribute="trailing" secondItem="jxF-Fp-ct1" secondAttribute="trailing" constant="20" id="g5O-YY-e3P"/>
-                            <constraint firstItem="PQf-2f-Lvf" firstAttribute="top" secondItem="gBT-fm-JFN" secondAttribute="top" constant="40" id="rlR-Iv-ccs"/>
+                            <constraint firstItem="PQf-2f-Lvf" firstAttribute="top" secondItem="gBT-fm-JFN" secondAttribute="top" constant="30" id="rlR-Iv-ccs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gBT-fm-JFN"/>
                     </view>
@@ -1207,7 +1211,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Tff-Q2-9AP"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.4909854531288147" green="0.79753625392913818" blue="0.77016955614089966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.49019607843137253" green="0.79607843137254897" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Login" id="FAO-9W-VmA">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="vKS-zx-tkg">
@@ -1219,7 +1223,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.40980762243270874" green="0.75838464498519897" blue="0.73116922378540039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.41176470588235292" green="0.75686274509803919" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ITg-h1-gfR" firstAttribute="leading" secondItem="zuK-WP-oaY" secondAttribute="leading" id="4Kc-zy-ahx"/>
                             <constraint firstItem="iJX-1z-4qU" firstAttribute="trailing" secondItem="ITg-h1-gfR" secondAttribute="trailing" id="TjW-SU-JcL"/>
@@ -1289,7 +1293,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Mwb-2T-h6B" firstAttribute="trailing" secondItem="fya-qb-1VA" secondAttribute="trailing" constant="20" id="DK7-Ho-AP0"/>
                             <constraint firstItem="fya-qb-1VA" firstAttribute="top" secondItem="OXP-dg-DsJ" secondAttribute="bottom" constant="5" id="Qu3-YT-B2B"/>

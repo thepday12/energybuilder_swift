@@ -18,49 +18,73 @@ class DialogNumberChart: UIViewController, ChartViewDelegate {
     var listValue = [ObjectNumber]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        btClose.setRadiusForView(radius: 15, backGroundColor: UIColor.gray.cgColor)
+        //btClose.setRadiusForView(radius: 15, backGroundColor: UIColor.gray.cgColor)
+        btClose.setRadiusForButton(radius: 15)
         lbName.text = objName
         if listValue.count > 0 {
-           showChart()
+//            listValue.append(ObjectNumber(value: "6", occurDate: "2018-02-21"))
+//            listValue.append(ObjectNumber(value: "10", occurDate: "2018-02-22"))
+//            listValue.append(ObjectNumber(value: "18", occurDate: "2018-02-23"))
+//            listValue.append(ObjectNumber(value: "1", occurDate: "2018-02-24"))
+//            listValue.append(ObjectNumber(value: "6", occurDate: "2018-02-25"))
+//            listValue.append(ObjectNumber(value: "10", occurDate: "2018-02-26"))
+//            listValue.append(ObjectNumber(value: "18", occurDate: "2018-02-27"))
+//            listValue.append(ObjectNumber(value: "1", occurDate: "2018-02-28"))
+//            listValue.append(ObjectNumber(value: "6", occurDate: "2018-03-01"))
+//            listValue.append(ObjectNumber(value: "10", occurDate: "2018-03-02"))
+//            listValue.append(ObjectNumber(value: "18", occurDate: "2018-03-23"))
+//            listValue.append(ObjectNumber(value: "1", occurDate: "2018-03-24"))
+            listValue = listValue.sorted(by: { $0.occurDate < $1.occurDate })
+            showChart()
         }else{
-             chartView.noDataText = "You need to provide data for the chart."
+            chartView.noDataText = "You need to provide data for the chart."
         }
+        
         
     }
     
     func showChart(){
         
         var lineChartEntry = [ChartDataEntry]()
-        listValue.append(ObjectNumber(value: "6", occurDate: "2018-02-21"))
-        listValue.append(ObjectNumber(value: "10", occurDate: "2018-02-22"))
-        listValue.append(ObjectNumber(value: "18", occurDate: "2018-02-23"))
-        listValue.append(ObjectNumber(value: "1", occurDate: "2018-02-24"))
         var labels = [String]()
-        for i in 0..<listValue.count{
-            let dataEntry = ChartDataEntry(x: Double(i), y: listValue[i].value.doubleValue)
-            labels.append(listValue[i].occurDate)
+        var endIndex = 0
+        if listValue.count > 10 {
+            endIndex = listValue.count-10
+        }
+        var tmpList = [ObjectNumber]()
+        for i in endIndex..<listValue.count{
+            tmpList.append(listValue[i])
+        }
+        
+        for i in 0..<tmpList.count{
+            let dataEntry = ChartDataEntry(x: Double(i), y: tmpList[i].value.doubleValue)
+            labels.append(tmpList[i].occurDate)
             lineChartEntry.append(dataEntry)
         }
-        let line = LineChartDataSet(values: lineChartEntry, label: "")
-        line.circleColors = [UIColor.blue]
+        let line = LineChartDataSet(values: lineChartEntry, label: " ")
+        //        line.circleColors = [UIColor.blue]
         let data = LineChartData(dataSet: line)
-        line.colors = [UIColor.red]
-        
+        //        line.colors = [UIColor.red]
         chartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
             return self.getShortDate(date: labels[Int(index)])
         })
+        
         
         chartView.rightAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
             return ""
         })
         
-        
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.leftAxis.drawGridLinesEnabled = true
+        chartView.rightAxis.drawGridLinesEnabled = false
+        chartView.chartDescription?.text = ""
         chartView.xAxis.spaceMin = 0.5
         chartView.xAxis.spaceMax = 0.5
-        chartView.leftAxis.spaceMin = 0.8
-        chartView.leftAxis.spaceMax = 0.8
-//        chartView.rightAxis.drawAxisLineEnabled = false
-
+        chartView.leftAxis.spaceTop = 0.8
+        chartView.leftAxis.spaceBottom = 0.5
+        chartView.xAxis.granularity =  1.0
+        chartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        chartView.legend.enabled = false
         chartView.animate(xAxisDuration: 0.5)
         chartView.data = data
     }

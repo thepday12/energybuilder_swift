@@ -67,6 +67,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DialogNumberChart.showChart():DialogNumberChart.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tmpList[i]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "BaseController.handlerUpload():BaseController.swift">
       </ContextState>
       <ContextState
@@ -215,6 +223,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in DialogNumberChart.showChart():DialogNumberChart.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "index">
+            </PersistentString>
+            <PersistentString
+               value = "labels">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ObjectAttrs.init(key:json:):AllModel.swift">
+      </ContextState>
+      <ContextState
          contextName = "DataCaptureViewController.saveClick(_:):DataCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -225,17 +247,6 @@
             </PersistentString>
             <PersistentString
                value = "data">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ObjectAttrs.init(key:json:):AllModel.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in DialogNumberChart.showChart():DialogNumberChart.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "labels">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -252,6 +263,9 @@
          <PersistentStrings>
             <PersistentString
                value = "listValue[i].value.doubleValue">
+            </PersistentString>
+            <PersistentString
+               value = "listValue.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -317,6 +331,14 @@
             </PersistentString>
             <PersistentString
                value = "p1[&quot;FL&quot;] as String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DialogNumberChart.getShortDate(date:):DialogNumberChart.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tmpList[i]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

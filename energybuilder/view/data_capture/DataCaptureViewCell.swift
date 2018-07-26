@@ -42,13 +42,15 @@ class DataCaptureViewCell: UITableViewCell {
         }
         label.text = labelValue
         label.textColor = UIColor.black
+          etValue.delegate = nil
         switch objectAttr.controlType {
         case "n":
             etValue.isHidden = false
             viewDropdown.isHidden = true
             etValue.isEnabled = objectAttr.enable
-//                        etValue.keyboardType = .decimalPad
+                        etValue.keyboardType = .decimalPad
             etValue.text = objectAttr.value.formatDecimalValueWithLocation
+            etValue.delegate = self
             label.textColor = UIColor.blue
             if !objectDetails.isEmpty{
                 if let json = try? JSONSerialization.jsonObject(with: objectDetails.data(using: .utf8)!) as![String:Any]{
@@ -217,7 +219,19 @@ class DataCaptureViewCell: UITableViewCell {
         let dialog = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "dialogNumberChart") as! DialogNumberChart
         dialog.objName = label.text!
         dialog.listValue = listValue
-        showViewDialog(viewController: self.viewController!, dialog: dialog, opacity: 0)
+        showViewDialog(viewController: self.viewController!, dialog: dialog, opacity: 0.75)
     }
     
 }
+
+extension DataCaptureViewCell:UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 12
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
+}
+
+

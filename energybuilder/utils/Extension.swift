@@ -33,10 +33,11 @@ extension String {
     }
     
     var formatDecimalValueWithLocation:String{
-        let formatter = NumberFormatter()
-        formatter.allowsFloats = true // Default is true, be explicit anyways
-        let decimalSeparator = formatter.decimalSeparator ?? "."
-        return self.replacingOccurrences(of: ".", with: decimalSeparator)
+//        let formatter = NumberFormatter()
+//        formatter.allowsFloats = true // Default is true, be explicit anyways
+//        let decimalSeparator = formatter.decimalSeparator ?? "."
+//        return self.replacingOccurrences(of: ".", with: decimalSeparator)
+        return self
     }
     
     
@@ -567,9 +568,9 @@ extension UIView {
     }
 }
 extension UIButton{
-    func setRadiusForButton(backGroundColor:CGColor?=UIColor.white.cgColor){
+    func setRadiusForButton(radius:CGFloat?=10,backGroundColor:CGColor?=UIColor.white.cgColor){
         
-        self.setRadiusForView(radius:10, backGroundColor:backGroundColor)
+        self.setRadiusForView(radius:radius, backGroundColor:backGroundColor)
         self.setBackgroundImage(#imageLiteral(resourceName: "bg_button_press"), for: .highlighted)
     }
     

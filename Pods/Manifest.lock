@@ -7,6 +7,7 @@ PODS:
   - DropDown (2)
   - IQKeyboardManager (5.0.6)
   - Presentr (1.3.2)
+  - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - DropDown
   - IQKeyboardManager (from `https://github.com/hackiftekhar/IQKeyboardManager.git`, tag `v5.0.6`)
   - Presentr (>= 1.3)
+  - Toast-Swift (~> 3.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - DatePickerDialog
     - DropDown
     - Presentr
+    - Toast-Swift
 
 EXTERNAL SOURCES:
   IQKeyboardManager:
@@ -41,7 +44,8 @@ SPEC CHECKSUMS:
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   IQKeyboardManager: 077b7f691dfa9d69db9cff66f2bed68ebfc02d9b
   Presentr: 797ae6ec8904eaba4ec58a4c2065bd66e31569ea
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: 78daa9da3aab26e67c7b8b56fdd746da30beb92a
+PODFILE CHECKSUM: 9f5c4bce12c308a60897846463fb47170ab6c7fa
 
 COCOAPODS: 1.5.3

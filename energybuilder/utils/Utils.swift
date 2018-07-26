@@ -33,8 +33,8 @@ func jsonToString(dictionary:[String:Any])->String{
         withJSONObject: dictionary,
         options: []) {
         theJSONText = String(data: theJSONData,
-                             encoding: .ascii)!
-        print("JSON string = \(theJSONText)")
+                             encoding: .utf8)!
+//        print("JSON string = \(theJSONText)")
     }
     return theJSONText;
 }

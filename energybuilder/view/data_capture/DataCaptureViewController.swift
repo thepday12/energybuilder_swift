@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import Toast_Swift
 
 class DataCaptureViewController: BaseController {
     
@@ -233,7 +234,7 @@ class DataCaptureViewController: BaseController {
         }
         //Kiem tra du lieu truoc khi save
         if dataValid(){
-            var contentValue = "{"
+            var contentValue = ""
             //Lay Du lieu
             for cell in listValueCreateJson{
                 if !cell.value.isEmpty{
@@ -243,8 +244,11 @@ class DataCaptureViewController: BaseController {
             
             //            //Xoa dau "," cuoi cung
             //            saveData = String(saveData.dropLast())
+            if contentValue.isEmpty{
+                return
+            }
             //Hoan thanh JSon
-            contentValue += "\"editted\":\"1\"}"
+            contentValue = "{"+contentValue+"\"editted\":\"1\"}"
             let saveData = "{\""+id+"\":"+contentValue+"}"
             let uploadData = getUploadData()
             if uploadData.isEmpty{
@@ -299,6 +303,8 @@ class DataCaptureViewController: BaseController {
             }else{//Neu Chua co du lieu thi du lieu moi duoc ghi luon
                 setObjectDetail(data: data)
             }
+            self.view.makeToast("Saved!")
+            tableView.reloadData()
         }
     }
     

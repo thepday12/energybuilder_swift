@@ -107,7 +107,10 @@ class ViewController: BaseController {
         
     }
     
-    
+    //Xoa het du lieu config
+    @IBAction func clickClear(_ sender: Any) {
+        setDataConfig(data: "")
+    }
     
     
     func updateLoginButton(){
