@@ -134,21 +134,14 @@ class DataCaptureViewController: BaseController {
                 date.value = getCurrentDate()
             }
             //Tao ID
-            var id = type+"_"+object.id+"_"+date.value
-            if type=="EU"{
-                let phase = listObjectAttr[1]
-                var phaseCode = ""
-                for item in object.listPhase{
-                    if item.getName() == phase.value{
-                        phaseCode = item.getPhaseCode()
-                        break
-                    }
-                }
-                id += "_"+phaseCode
+            let id = getId()
+            var position = 1//khong doi tham so Occur date
+            if(dateValue!.isEmpty && type=="EU"){
+                position = 2//khong doi tham so Occur date va operation
             }
             //Lay du lieu tu ID
             if var json = try? JSONSerialization.jsonObject(with: dataObjects.data(using: .utf8)!) as![String:Any]{
-                clearData()
+                
                 //Neu tai key ung voi ID co du lieu
                 if let dataAttr = json[id] as? [String:Any]{
                     for data in dataAttr{
@@ -161,11 +154,11 @@ class DataCaptureViewController: BaseController {
                     }
                    
                 }else{
-                    clearData()
+                    clearData(from: position)
                 }
                 
             }else{
-              clearData()
+                clearData(from: position)
             }
 //            if !(dateValue?.isEmpty)! {
 //                listObjectAttr[0].value = dateValue!
@@ -211,27 +204,16 @@ class DataCaptureViewController: BaseController {
     }
     
     @IBAction func saveClick(_ sender: Any) {
-        let object  = listObject[selection]
-        let date = listObjectAttr[0]
+       
         var listValueCreateJson = listObjectAttr
-        //Khong lay tham so Occur date
-        listValueCreateJson.remove(at: 0)
+       
         
         //Tao ID De save
-        var id = type+"_"+object.id+"_"+date.value
-        if type=="EU"{
-            let phase = listObjectAttr[1]
-            var phaseCode = ""
-            for item in object.listPhase{
-                if item.getName() == phase.value{
-                    phaseCode = item.getPhaseCode()
-                    break
-                }
-            }
-            id += "_"+phaseCode
-            //Khong lay tham so Operation
-            listValueCreateJson.remove(at: 0)
-        }
+        let id = getId()
+        //Khong lay tham so Occur date
+        listValueCreateJson.remove(at: 0)
+        //Khong lay tham so Operation
+        listValueCreateJson.remove(at: 0)
         //Kiem tra du lieu truoc khi save
         if dataValid(){
             var contentValue = ""
@@ -269,7 +251,28 @@ class DataCaptureViewController: BaseController {
         
         
     }
-    
+    func getId()->String{
+        let object  = listObject[selection]
+        let date = listObjectAttr[0]
+       
+        
+        var id = type+"_"+object.id+"_"+date.value
+        if type=="EU"{
+            let phase = listObjectAttr[1]
+            var phaseCode = ""
+            for item in object.listPhase{
+                if item.getName() == phase.value{
+                    phaseCode = item.getPhaseCode()
+                    break
+                }
+            }
+            if phaseCode.isEmpty{
+                phaseCode = object.listPhase[0].getPhaseCode()
+            }
+            id += "_"+phaseCode
+        }
+        return id
+    }
     func dataValid()->Bool{
         for item in listObjectAttr{
             if item.mandatory {
@@ -310,12 +313,12 @@ class DataCaptureViewController: BaseController {
     
     
     @IBAction func resetClick(_ sender: Any) {
-        clearData()
+        clearData(from: 0)
         tableView.reloadData()
     }
     
-    func clearData(){
-        for i in 1..<listObjectAttr.count{
+    func clearData(from:Int){
+        for i in from..<listObjectAttr.count{
             let item = listObjectAttr[i]
             item.value = ""
         }

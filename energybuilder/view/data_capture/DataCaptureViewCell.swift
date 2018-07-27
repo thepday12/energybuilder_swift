@@ -129,7 +129,7 @@ class DataCaptureViewCell: UITableViewCell {
     func createViewDropdown(){
         listObjectVisible =  [String]()
         let objectData =  objectAttr.objectData
-        if type == "EU"{
+        if self.index == 1 && type == "EU"{
             for item in objectData.listPhase{
                 listObjectVisible.append(item.getName())
             }
@@ -158,6 +158,10 @@ class DataCaptureViewCell: UITableViewCell {
             self.lbValue.text = item
             self.updateValue()
             self.dropDown.hide()
+            if self.index == 1{
+                let view = self.viewController as! DataCaptureViewController
+                view.loadDataFromDataObjects()
+            }
         }
     }
     
@@ -205,7 +209,9 @@ class DataCaptureViewCell: UITableViewCell {
                 self.lbValue.text = dateValue
                 self.updateValue()
                 let viewController = self.viewController as! DataCaptureViewController
+                if self.index == 0{
                 viewController.loadDataFromDataObjects(dateValue: dateValue)
+                }
             }
         }
     }

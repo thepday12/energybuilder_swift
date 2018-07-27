@@ -67,6 +67,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DataCaptureViewController.clearData(from:):DataCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listObjectAttr">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DialogNumberChart.showChart():DialogNumberChart.swift">
          <PersistentStrings>
             <PersistentString
