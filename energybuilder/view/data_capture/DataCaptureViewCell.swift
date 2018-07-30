@@ -134,6 +134,7 @@ class DataCaptureViewCell: UITableViewCell {
         if self.index == 1 && type == "EU"{
             for item in objectData.listPhase{
                 listObjectVisible.append(item.getName())
+                listObject.append(ListObject(key: item.getPhaseCode(),name: item.getName()))
             }
             
         }else{
@@ -146,13 +147,21 @@ class DataCaptureViewCell: UITableViewCell {
         
         dropDown.anchorView = btValue
         dropDown.dataSource  = listObjectVisible
-        var value = listObjectVisible[0]
+        var name = ""
+        var value = listObject[0].key
         if objectAttr.value.isEmpty{
             objectAttr.value = value
         }else{
              value = objectAttr.value
         }
-        lbValue.text = value
+      
+        for item in listObject{
+            if item.key == value {
+                name = item.name
+                break
+            }
+        }
+        lbValue.text = name
         
         
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
@@ -193,8 +202,14 @@ class DataCaptureViewCell: UITableViewCell {
             }
             break
         default://l
+            
             if let value = lbValue.text{
-                result = value
+                for item in listObject{
+                    if item.name == value {
+                         result = item.key
+                        break
+                    }
+                }
             }
             break
         }

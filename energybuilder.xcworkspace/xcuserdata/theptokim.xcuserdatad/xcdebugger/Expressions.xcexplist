@@ -75,6 +75,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DataCaptureViewCell.updateValue():DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getValue()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DialogNumberChart.showChart():DialogNumberChart.swift">
          <PersistentStrings>
             <PersistentString
@@ -100,7 +108,7 @@
          contextName = "closure #1 in closure #1 in uploadDataHandler(viewController:dataUpload:isDismiss:):NetworkHelper.swift">
          <PersistentStrings>
             <PersistentString
-               value = "getDataTypeString()">
+               value = "dataUpload">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

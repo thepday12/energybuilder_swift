@@ -176,6 +176,11 @@ class ObjectAttrs{
         self.dataType = dataType
         self.controlType = controlType
         self.objectData = objectData
+//        list = [String:String]()
+//        for i in 0..<objectData.listPhase.count {
+//            list[objectData.listPhase[i].getPhaseCode()] = objectData.listPhase[i].getName()
+//        }
+        
     }
     
     init(json:[String:Any],listValues:[String:Any]) {

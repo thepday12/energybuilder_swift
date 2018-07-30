@@ -212,8 +212,10 @@ class DataCaptureViewController: BaseController {
         let id = getId()
         //Khong lay tham so Occur date
         listValueCreateJson.remove(at: 0)
-        //Khong lay tham so Operation
-        listValueCreateJson.remove(at: 0)
+        if type == "EU"{
+            //Khong lay tham so Operation
+            listValueCreateJson.remove(at: 0)
+        }
         //Kiem tra du lieu truoc khi save
         if dataValid(){
             var contentValue = ""
@@ -259,13 +261,13 @@ class DataCaptureViewController: BaseController {
         var id = type+"_"+object.id+"_"+date.value
         if type=="EU"{
             let phase = listObjectAttr[1]
-            var phaseCode = ""
-            for item in object.listPhase{
-                if item.getName() == phase.value{
-                    phaseCode = item.getPhaseCode()
-                    break
-                }
-            }
+            var phaseCode = phase.value
+//            for item in object.listPhase{
+//                if item.getName() == phase.value{
+//                    phaseCode = item.getPhaseCode()
+//                    break
+//                }
+//            }
             if phaseCode.isEmpty{
                 phaseCode = object.listPhase[0].getPhaseCode()
             }
