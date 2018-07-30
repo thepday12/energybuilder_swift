@@ -54,7 +54,7 @@
          contextName = "DataCaptureViewCell.createField(type:index:objectAttr:objectData:):DataCaptureViewCell.swift">
          <PersistentStrings>
             <PersistentString
-               value = " item.value as! [String:String]">
+               value = "item.key.components(separatedBy: &quot;_&quot;)[2]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

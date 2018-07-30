@@ -109,7 +109,13 @@ class ViewController: BaseController {
     
     //Xoa het du lieu config
     @IBAction func clickClear(_ sender: Any) {
-        setDataConfig(data: "")
+        if(!getDataConfig().isEmpty){
+        showDialogConfirm(viewController: self, title: "Warning", content: "Do you really want clear all offline data?",handler:{ (action: UIAlertAction!) in
+             setDataConfig(data: "")
+            setUploadData(data: "")
+        })
+        }
+       
     }
     
     
@@ -117,7 +123,7 @@ class ViewController: BaseController {
         userToken = getUserToken()
         if userToken.isEmpty {
             btLogin.setTitle("LOGIN", for: .normal)
-        }else{
+        }else{  
             btLogin.setTitle("LOGOUT", for: .normal)
         }
     }

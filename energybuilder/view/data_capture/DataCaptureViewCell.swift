@@ -60,7 +60,9 @@ class DataCaptureViewCell: UITableViewCell {
                         if item.key.starts(with: id){
                             let jsonValue = item.value as! [String:String]
                             if let value = jsonValue[objectAttr.key]{
-                                listValue.append(ObjectNumber(value: value, occurDate: item.key.replacingOccurrences(of: id+"_", with: "")))
+                                var occurDate = item.key.components(separatedBy: "_")[2]
+                                
+                                listValue.append(ObjectNumber(value: value, occurDate:occurDate ))
                             }
                         }
                     }
