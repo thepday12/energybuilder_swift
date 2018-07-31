@@ -205,22 +205,28 @@ func getObjectDetail()->String{
 
 
 func setUploadData(data:String)->Bool{
-    let preferences = UserDefaults.standard
-    preferences.set(data, forKey: UPLOAD_DATA_KEY)
-    return preferences.synchronize()
+    
+    let dataConfig =  getDataConfig()
+    if var json = try? JSONSerialization.jsonObject(with: dataConfig.data(using: .utf8)!) as![String:Any]{
+        //Update complete cho Points
+        if let jsonObjectDetails = try? JSONSerialization.jsonObject(with: data.data(using: .utf8)!) as![String:Any]{
+            json["object_details"] = jsonObjectDetails
+        }
+        return setDataConfig(data: jsonToString(dictionary: json))
+    }else{
+        return false
+    }
 }
 
 
 func getUploadData()->String{
-    let preferences = UserDefaults.standard
     var result = ""
-    if let value = preferences.string(forKey: UPLOAD_DATA_KEY){
-        let defaultValue = preferences.string(forKey: DEFAULT_VALUE_KEY)
-        if value == defaultValue {
-            return ""
-        }else{
-            result = value
+    let dataConfig =  getDataConfig()
+    if var json = try? JSONSerialization.jsonObject(with: dataConfig.data(using: .utf8)!) as![String:Any]{
+        if let value = json["object_details"] as? [String : Any]{
+            result = jsonToString(dictionary: value)
         }
+        
     }
     return result
 }
@@ -301,18 +307,18 @@ func setCompletePoint(pointObj:Point,complete:Bool)->[String:Any]{
             }
             json["object_details"] = objTMP
             //update objectDetail Upload
-            if let jsonUpload = try? JSONSerialization.jsonObject(with: getUploadData().data(using: .utf8)!) as![String:Any]{
-                var objTMPUpload = jsonUpload
-                for idObject in idObjectList{
-                    for item in jsonUpload{
-                        let key = item.key
-                        if key.starts(with: idObject){
-                            objTMPUpload.removeValue(forKey: key)
-                        }
-                    }
-                }
-                setUploadData(data: jsonToString(dictionary: objTMPUpload))
-            }
+//            if let jsonUpload = try? JSONSerialization.jsonObject(with: getUploadData().data(using: .utf8)!) as![String:Any]{
+//                var objTMPUpload = jsonUpload
+//                for idObject in idObjectList{
+//                    for item in jsonUpload{
+//                        let key = item.key
+//                        if key.starts(with: idObject){
+//                            objTMPUpload.removeValue(forKey: key)
+//                        }
+//                    }
+//                }
+//                setUploadData(data: jsonToString(dictionary: objTMPUpload))
+//            }
         }
         
         result = json

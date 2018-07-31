@@ -178,7 +178,6 @@ func uploadDataHandler(viewController:BaseController,dataUpload:String, isDismis
     view.addSubview(indicator)
     viewController.view.isUserInteractionEnabled = false
     indicator.startAnimating()
-    
     let parameters: Parameters = [
         "token": getUserToken(),
         "data_type": getDataTypeString(),
@@ -199,6 +198,7 @@ func uploadDataHandler(viewController:BaseController,dataUpload:String, isDismis
                             if message == "ok"{
                                 setUploadData(data: "")
                                 completeLoading(viewController:viewController,indicator:indicator)
+                                showDialogMessage(viewController: viewController, title: "Upload", message: "Upload completed!")
                                 if isDismiss!{
                                     viewController.dismiss(animated: true, completion: nil)
                                 }

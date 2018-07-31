@@ -43,6 +43,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DataCaptureViewCell.showDialog():DataCaptureViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "endWith.reversed()">
+            </PersistentString>
+            <PersistentString
+               value = "item.key">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "PointViewController.setCompletePoint(complete:):PointViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -51,10 +62,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DataCaptureViewCell.createField(type:index:objectAttr:objectData:):DataCaptureViewCell.swift">
+         contextName = "DataCaptureViewCell.updateValue():DataCaptureViewCell.swift">
          <PersistentStrings>
             <PersistentString
-               value = "item.key.components(separatedBy: &quot;_&quot;)[2]">
+               value = "getValue()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -67,18 +78,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DataCaptureViewController.clearData(from:):DataCaptureViewController.swift">
+         contextName = "DataCaptureViewCell.createField(type:index:objectAttr:objectData:):DataCaptureViewCell.swift">
          <PersistentStrings>
             <PersistentString
-               value = "listObjectAttr">
+               value = "viewController as! DataCaptureViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DataCaptureViewCell.updateValue():DataCaptureViewCell.swift">
+         contextName = "DataCaptureViewController.clearData(from:):DataCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "getValue()">
+               value = "listObjectAttr">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -363,6 +374,14 @@
          <PersistentStrings>
             <PersistentString
                value = "self.revealViewController().panGestureRecognizer().isEnabled">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "uploadDataHandler(viewController:dataUpload:isDismiss:):NetworkHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getDataConfig()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

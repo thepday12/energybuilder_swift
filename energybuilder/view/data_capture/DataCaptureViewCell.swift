@@ -26,13 +26,14 @@ class DataCaptureViewCell: UITableViewCell {
     var indexDropdown = 0
     var type = ""
     var listValue = [ObjectNumber]()//Dung de lay danh sach du lieu da luu
-    
+    var objectData:ObjectData = ObjectData()
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func createField(type:String,index:Int,objectAttr:ObjectAttrs,objectData:ObjectData){
         let objectDetails = getObjectDetail()
+        self.objectData = objectData;
         self.type = type
         self.index = index
         self.objectAttr = objectAttr
@@ -52,25 +53,26 @@ class DataCaptureViewCell: UITableViewCell {
             etValue.text = objectAttr.value.formatDecimalValueWithLocation
             etValue.delegate = self
             label.textColor = UIColor.blue
-            if !objectDetails.isEmpty{
-                if let json = try? JSONSerialization.jsonObject(with: objectDetails.data(using: .utf8)!) as![String:Any]{
-                    let id = type+"_"+objectData.id
-                     listValue = [ObjectNumber]()
-                    for item in json{
-                        if item.key.starts(with: id){
-                            let jsonValue = item.value as! [String:String]
-                            if let value = jsonValue[objectAttr.key]{
-                                var occurDate = item.key.components(separatedBy: "_")[2]
-                                
-                                listValue.append(ObjectNumber(value: value, occurDate:occurDate ))
-                            }
-                        }
-                    }
-                    if listValue.count > 0{
-                        label.clickListener(myTarget: self, myAction: #selector(showDialog))
-                    }
-                }
-            }
+//            if !objectDetails.isEmpty{
+//                if let json = try? JSONSerialization.jsonObject(with: objectDetails.data(using: .utf8)!) as![String:Any]{
+//                    let id = type+"_"+objectData.id
+//                     listValue = [ObjectNumber]()
+
+//                     let view = self.viewController as! DataCaptureViewController
+//                    let endWith = ""
+//                    for item in json{
+//                        if item.key.starts(with: id) && item.key.reversed().starts(with: endWith.reversed()){
+//                            let jsonValue = item.value as! [String:String]
+//                            if let value = jsonValue[objectAttr.key]{
+//                                var occurDate = item.key.components(separatedBy: "_")[2]
+//
+//                                listValue.append(ObjectNumber(value: value, occurDate:occurDate ))
+//                            }
+//                        }
+//                    }
+                    label.clickListener(myTarget: self, myAction: #selector(showDialog))
+//                }
+//            }
             break
         case "t":
             etValue.isHidden = false
@@ -239,10 +241,31 @@ class DataCaptureViewCell: UITableViewCell {
     }
     
     @objc func showDialog(){
-        let dialog = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "dialogNumberChart") as! DialogNumberChart
-        dialog.objName = label.text!
-        dialog.listValue = listValue
-        showViewDialog(viewController: self.viewController!, dialog: dialog, opacity: 0.75)
+        let objectDetail = getObjectDetail()
+        if let json = try? JSONSerialization.jsonObject(with: objectDetail.data(using: .utf8)!) as![String:Any]{
+            let id = type+"_"+objectData.id
+            listValue = [ObjectNumber]()
+            
+            let view = self.viewController as! DataCaptureViewController
+            let endWith = view.getEndId()
+            for item in json{
+                if item.key.starts(with: id) && item.key.reversed().starts(with: endWith.reversed()){
+                    let jsonValue = item.value as! [String:String]
+                    if let value = jsonValue[objectAttr.key]{
+                        var occurDate = item.key.components(separatedBy: "_")[2]
+                        
+                        listValue.append(ObjectNumber(value: value, occurDate:occurDate ))
+                    }
+                }
+            }
+            if listValue.count > 0{
+                let dialog = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "dialogNumberChart") as! DialogNumberChart
+                dialog.objName = label.text!
+                dialog.listValue = listValue
+                showViewDialog(viewController: self.viewController!, dialog: dialog, opacity: 0.75)
+            }
+        }
+        
     }
     
 }

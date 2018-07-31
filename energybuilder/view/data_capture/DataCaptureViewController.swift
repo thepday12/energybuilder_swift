@@ -275,6 +275,20 @@ class DataCaptureViewController: BaseController {
         }
         return id
     }
+    
+    func getEndId()->String{
+        let object  = listObject[selection]
+        if type=="EU"{
+            let phase = listObjectAttr[1]
+            var phaseCode = phase.value
+            if phaseCode.isEmpty{
+                phaseCode = object.listPhase[0].getPhaseCode()
+            }
+            return phaseCode
+        }else{
+            return ""
+        }
+    }
     func dataValid()->Bool{
         for item in listObjectAttr{
             if item.mandatory {
