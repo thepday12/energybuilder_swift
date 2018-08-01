@@ -159,6 +159,8 @@ class ObjectAttrs{
     var enable = true
     var mandatory = false
     var list = [String:String]()
+    var listObjectVisible =  [String]()
+    var listObject = [ListObject]()
     var value = ""
     var objectData = ObjectData()
     init(){
@@ -169,6 +171,7 @@ class ObjectAttrs{
         self.name = name
         self.dataType = dataType
         self.controlType = controlType
+        self.value = getCurrentDate()
     }
     
     init(name:String,dataType:String,controlType:String,objectData:ObjectData) {
@@ -176,6 +179,12 @@ class ObjectAttrs{
         self.dataType = dataType
         self.controlType = controlType
         self.objectData = objectData
+        
+        for item in objectData.listPhase{
+            listObjectVisible.append(item.getName())
+            listObject.append(ListObject(key: item.getPhaseCode(),name: item.getName()))
+        }
+        self.value = listObject[0].key
 //        list = [String:String]()
 //        for i in 0..<objectData.listPhase.count {
 //            list[objectData.listPhase[i].getPhaseCode()] = objectData.listPhase[i].getName()
@@ -208,8 +217,13 @@ class ObjectAttrs{
         if let value = json["list"] as? String{
             if let list = listValues[value] as? [String:String]{
                 self.list = list
+                for item in list{
+                    listObject.append(ListObject(key: item.key, name: item.value))
+                    listObjectVisible.append(item.value)
+                }
             }
         }
+        
     }
     
     func getJsonValue()->String{

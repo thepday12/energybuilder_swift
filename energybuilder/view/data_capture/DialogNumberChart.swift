@@ -90,8 +90,12 @@ class DialogNumberChart: UIViewController, ChartViewDelegate {
     }
     
     func getShortDate(date:String)->String{
-        let arr = date.split(separator: "-")
-        return arr[2]+"/"+arr[1]
+        if !date.isEmpty{
+            let arr = date.split(separator: "-")
+            return arr[2]+"/"+arr[1]
+        }else{
+            return ""
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

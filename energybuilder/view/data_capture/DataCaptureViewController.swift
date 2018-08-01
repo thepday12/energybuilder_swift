@@ -336,7 +336,13 @@ class DataCaptureViewController: BaseController {
     func clearData(from:Int){
         for i in from..<listObjectAttr.count{
             let item = listObjectAttr[i]
-            item.value = ""
+            if i == 0{
+                item.value = getCurrentDate()
+            }else if item.controlType == "l"{
+                item.value = item.listObject[0].key
+            }else{
+                item.value = ""
+            }
         }
     }
     

@@ -6,7 +6,7 @@
          contextName = "DataCaptureViewCell.createViewDropdown():DataCaptureViewCell.swift">
          <PersistentStrings>
             <PersistentString
-               value = "objectAttr">
+               value = "listObjectVisible">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -23,6 +23,14 @@
          <PersistentStrings>
             <PersistentString
                value = "dataObjects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataCaptureViewController.updateCellOperation(index:):DataCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listObject[index]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -49,7 +57,7 @@
                value = "endWith.reversed()">
             </PersistentString>
             <PersistentString
-               value = "item.key">
+               value = "item">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -89,7 +97,7 @@
          contextName = "DataCaptureViewController.clearData(from:):DataCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "listObjectAttr">
+               value = " item.objectData.listPhase[0].getPhaseCode()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -97,7 +105,7 @@
          contextName = "DialogNumberChart.showChart():DialogNumberChart.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tmpList[i]">
+               value = "labels">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -402,6 +410,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ObjectAttrs.init(name:dataType:controlType:):AllModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getCurrentDate()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "RoutesCell.updateView(route:):RoutesCell.swift">
          <PersistentStrings>
             <PersistentString
@@ -409,6 +425,14 @@
             </PersistentString>
             <PersistentString
                value = "route.complete*100/3">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ObjectAttrs.init(name:dataType:controlType:objectData:):AllModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "objectData.listPhase[0].getPhaseCode()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

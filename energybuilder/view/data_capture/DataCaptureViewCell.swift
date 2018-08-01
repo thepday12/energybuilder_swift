@@ -19,8 +19,7 @@ class DataCaptureViewCell: UITableViewCell {
     @IBOutlet weak var btValue: UIButton!
     var objectAttr = ObjectAttrs()
     @IBOutlet weak var etValue: UITextField!
-    var listObject = [ListObject]()
-    var listObjectVisible = [String]()
+   
     let dropDown = DropDown()
     var index = 0
     var indexDropdown = 0
@@ -125,39 +124,39 @@ class DataCaptureViewCell: UITableViewCell {
     func updateObjectData(objectData:ObjectData){
         objectAttr.objectData = objectData
         if objectData.listPhase.count > 0{
-            objectAttr.value = objectData.listPhase[0].getName()
+            objectAttr.value = objectData.listPhase[0].getPhaseCode()
         }
         createViewDropdown()
     }
     
     func createViewDropdown(){
-        listObjectVisible =  [String]()
-        let objectData =  objectAttr.objectData
-        if self.index == 1 && type == "EU"{
-            for item in objectData.listPhase{
-                listObjectVisible.append(item.getName())
-                listObject.append(ListObject(key: item.getPhaseCode(),name: item.getName()))
-            }
-            
-        }else{
-//            let values = listValue[objectAttr.list] as! [String:String]
-            for item in objectAttr.list{
-                listObject.append(ListObject(key: item.key, name: item.value))
-                listObjectVisible.append(item.value)
-            }
-        }
+//        listObjectVisible =  [String]()
+//        let objectData =  objectAttr.objectData
+//        if self.index == 1 && type == "EU"{
+//            for item in objectData.listPhase{
+//                listObjectVisible.append(item.getName())
+//                listObject.append(ListObject(key: item.getPhaseCode(),name: item.getName()))
+//            }
+//
+//        }else{
+////            let values = listValue[objectAttr.list] as! [String:String]
+//            for item in objectAttr.list{
+//                listObject.append(ListObject(key: item.key, name: item.value))
+//                listObjectVisible.append(item.value)
+//            }
+//        }
         
         dropDown.anchorView = btValue
-        dropDown.dataSource  = listObjectVisible
+        dropDown.dataSource  = objectAttr.listObjectVisible
         var name = ""
-        var value = listObject[0].key
+        var value = objectAttr.listObject[0].key
         if objectAttr.value.isEmpty{
             objectAttr.value = value
         }else{
              value = objectAttr.value
         }
       
-        for item in listObject{
+        for item in objectAttr.listObject{
             if item.key == value {
                 name = item.name
                 break
@@ -171,7 +170,7 @@ class DataCaptureViewCell: UITableViewCell {
             self.lbValue.text = item
             self.updateValue()
             self.dropDown.hide()
-            if self.index == 1{
+            if self.index == 1 && self.type == "EU"{
                 let view = self.viewController as! DataCaptureViewController
                 view.loadDataFromDataObjects()
             }
@@ -206,7 +205,7 @@ class DataCaptureViewCell: UITableViewCell {
         default://l
             
             if let value = lbValue.text{
-                for item in listObject{
+                for item in objectAttr.listObject{
                     if item.name == value {
                          result = item.key
                         break
@@ -252,9 +251,12 @@ class DataCaptureViewCell: UITableViewCell {
                 if item.key.starts(with: id) && item.key.reversed().starts(with: endWith.reversed()){
                     let jsonValue = item.value as! [String:String]
                     if let value = jsonValue[objectAttr.key]{
+                        if !value.isEmpty {
                         var occurDate = item.key.components(separatedBy: "_")[2]
-                        
-                        listValue.append(ObjectNumber(value: value, occurDate:occurDate ))
+                            if !occurDate.isEmpty{
+                                listValue.append(ObjectNumber(value: value, occurDate:occurDate ))
+                            }
+                        }
                     }
                 }
             }
