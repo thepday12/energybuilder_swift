@@ -96,6 +96,7 @@ class DataCaptureViewCell: UITableViewCell {
             break
         default://l
             viewDropdown.isHidden = false
+            ivDropdown.image = #imageLiteral(resourceName: "ic_dropdown")
             etValue.isHidden = true
             viewDropdown.setBackgroundDropdown()
             btValue.isEnabled = objectAttr.enable

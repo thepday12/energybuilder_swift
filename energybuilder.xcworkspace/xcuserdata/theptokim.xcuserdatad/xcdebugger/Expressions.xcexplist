@@ -22,7 +22,7 @@
          contextName = "DataCaptureViewController.loadDataFromDataObjects(dateValue:):DataCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "dataObjects">
+               value = "type">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

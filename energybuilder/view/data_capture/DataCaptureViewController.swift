@@ -136,7 +136,7 @@ class DataCaptureViewController: BaseController {
             //Tao ID
             let id = getId()
             var position = 1//khong doi tham so Occur date
-            if(dateValue!.isEmpty && type=="EU"){
+            if(type=="EU"){
                 position = 2//khong doi tham so Occur date va operation
             }
             //Lay du lieu tu ID
@@ -329,7 +329,11 @@ class DataCaptureViewController: BaseController {
     
     
     @IBAction func resetClick(_ sender: Any) {
-        clearData(from: 0)
+        var from = 1
+        if(type=="EU"){
+            from = 2
+        }
+        clearData(from: from)
         tableView.reloadData()
     }
     
