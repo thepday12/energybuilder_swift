@@ -105,6 +105,7 @@ class DataCaptureViewController: BaseController {
         // The list of items to display. Can be changed dynamically
         dropDown.dataSource = listObjectVisible
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            do{
             self.lbValueObjectVisible.text = item
             self.selection = index
             self.updateTitle()
@@ -113,6 +114,10 @@ class DataCaptureViewController: BaseController {
             }
             
             self.loadDataFromDataObjects()
+            } catch let error {
+                print(error.localizedDescription)
+                showDialogMessage(viewController: self, title: "Error", message: error.localizedDescription)
+            }
             
         }
         

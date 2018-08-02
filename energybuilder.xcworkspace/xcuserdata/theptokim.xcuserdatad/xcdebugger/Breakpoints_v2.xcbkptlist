@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DataCaptureViewController.swift"
-            timestampString = "554808639.580568"
+            timestampString = "554878175.542873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DialogNumberChart.swift"
-            timestampString = "554808639.581014"
+            timestampString = "554878444.9199719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DataCaptureViewController.swift"
-            timestampString = "554808639.581087"
+            timestampString = "554878175.54321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DataCaptureViewCell.swift"
-            timestampString = "554808639.581368"
+            timestampString = "554878444.920259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "252"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DataCaptureViewCell.swift"
-            timestampString = "554808639.5814379"
+            timestampString = "554878444.920382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DataCaptureViewCell.swift"
-            timestampString = "554808639.58149"
+            timestampString = "554878444.9204791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "245"
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DialogNumberChart.swift"
-            timestampString = "554808639.58155"
+            timestampString = "554878444.920607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "getShortDate(date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DataCaptureViewCell.swift"
-            timestampString = "554808639.581601"
+            timestampString = "554878444.92068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "258"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/model/AllModel.swift"
-            timestampString = "554808639.58165"
+            timestampString = "554876696.72904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DataCaptureViewController.swift"
-            timestampString = "554808639.581695"
+            timestampString = "554878175.543732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "loadDataFromDataObjects(dateValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,13 +186,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "energybuilder/view/data_capture/DataCaptureViewController.swift"
-            timestampString = "554808639.581931"
+            timestampString = "554878175.543792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "loadDataFromDataObjects(dateValue:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "energybuilder/view/data_capture/DataCaptureViewController.swift"
+            timestampString = "554878175.543848"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "energybuilder/utils/Extension.swift"
+            timestampString = "554878444.920857"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "formatDecimalValue"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "energybuilder/utils/Extension.swift"
+            timestampString = "554878444.921536"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "formatDecimalValue"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

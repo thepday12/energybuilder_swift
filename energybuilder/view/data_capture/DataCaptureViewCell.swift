@@ -48,7 +48,7 @@ class DataCaptureViewCell: UITableViewCell {
             etValue.isHidden = false
             viewDropdown.isHidden = true
             etValue.isEnabled = objectAttr.enable
-                        etValue.keyboardType = .decimalPad
+            etValue.keyboardType = UIKeyboardType.decimalPad
             etValue.text = objectAttr.value.formatDecimalValueWithLocation
             etValue.delegate = self
             label.textColor = UIColor.blue

@@ -11,6 +11,12 @@ import UIKit
 
 extension String {
     
+    func contains(find: String) -> Bool{
+        return self.range(of: find) != nil
+    }
+    func containsIgnoringCase(find: String) -> Bool{
+        return self.range(of: find, options: .caseInsensitive) != nil
+    }
 //    var floatValue: Float {
 //        let nf = NumberFormatter()
 //        nf.decimalSeparator = "."
@@ -27,17 +33,26 @@ extension String {
     
     var formatDecimalValue:String{
         let formatter = NumberFormatter()
+        formatter.locale = NSLocale.current
         formatter.allowsFloats = true // Default is true, be explicit anyways
-        let decimalSeparator = formatter.decimalSeparator ?? "."
+        var decimalSeparator = formatter.decimalSeparator ?? ","
+        if self.contains(find: ","){
+            decimalSeparator = ","
+        }
         return self.replacingOccurrences(of: decimalSeparator, with: ".")
     }
     
+//    var formatNumberCharts:String{
+//
+//        return
+//    }
+    
     var formatDecimalValueWithLocation:String{
-//        let formatter = NumberFormatter()
-//        formatter.allowsFloats = true // Default is true, be explicit anyways
-//        let decimalSeparator = formatter.decimalSeparator ?? "."
-//        return self.replacingOccurrences(of: ".", with: decimalSeparator)
-        return self
+        let formatter = NumberFormatter()
+        formatter.locale = NSLocale.current
+        formatter.allowsFloats = true // Default is true, be explicit anyways
+        let decimalSeparator = formatter.decimalSeparator ?? "."
+        return self.replacingOccurrences(of: ".", with: decimalSeparator)
     }
     
     
@@ -218,6 +233,11 @@ extension Float {
 }
 
 extension Double {
+    
+//    func rounded(toPlaces places:Int) -> String {
+//        let divisor = pow(10.0, Double(places))
+//        return ((self * divisor).rounded() / divisor).stringValue
+//    }
     var stringValue: String {
         return  String(self)
     }

@@ -57,12 +57,14 @@ class DialogNumberChart: UIViewController, ChartViewDelegate {
         }
         
         for i in 0..<tmpList.count{
-            let dataEntry = ChartDataEntry(x: Double(i), y: tmpList[i].value.doubleValue)
+            let value = tmpList[i].value
+            let dataEntry = ChartDataEntry(x: Double(i), y: value.doubleValue)
             labels.append(tmpList[i].occurDate)
             lineChartEntry.append(dataEntry)
         }
         let line = LineChartDataSet(values: lineChartEntry, label: " ")
         //        line.circleColors = [UIColor.blue]
+       
         let data = LineChartData(dataSet: line)
         //        line.colors = [UIColor.red]
         chartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
