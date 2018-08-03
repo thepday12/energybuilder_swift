@@ -132,6 +132,14 @@
          contextName = "ObjectAttrs.init(key:json:):AllModel.swift">
       </ContextState>
       <ContextState
+         contextName = "ObjectAttrs.init(json:listValues:):AllModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listValues[value] as? [Any:String]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ObjectAttrs.init(key:json:listValues:):AllModel.swift">
          <PersistentStrings>
             <PersistentString
@@ -246,7 +254,7 @@
          contextName = "DataCaptureViewController.clearData(from:):DataCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = " item.objectData.listPhase[0].getPhaseCode()">
+               value = "from">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

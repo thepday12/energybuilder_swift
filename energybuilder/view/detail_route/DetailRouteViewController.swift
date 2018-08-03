@@ -40,9 +40,9 @@ class DetailRouteViewController: BaseController {
         if let json = try? JSONSerialization.jsonObject(with: data) as![String:Any]{
             
             //Lay danh sach point
-            let pointValues =  json["points"] as![String:Any]
+            let pointValues =  json["points"] as![[String:Any]]
             for item  in pointValues{
-                points.append(Point(key:item.key,json: item.value as! [String:Any]))
+                points.append(Point(json: item))
             }
             
             for item in points{

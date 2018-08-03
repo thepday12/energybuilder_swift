@@ -16,8 +16,10 @@ class Route{
     init() {
         
     }
-    init(key:String,json:[String:Any]) {
-        self.key =  key
+    init(json:[String:Any]) {
+        if let value = json["key"] as? String{
+            self.key = value
+        }
         if let value = json["id"] as? String{
             self.id = value
         }
@@ -53,8 +55,10 @@ class Point{
     init() {
         
     }
-    init(key:String,json:[String:Any]) {
-        self.key =  key
+    init(json:[String:Any]) {
+        if let value = json["key"] as? String{
+            self.key = value
+        }
         if let value = json["id"] as? String{
             self.id = value
         }
@@ -124,21 +128,35 @@ class ObjectData{
         
         if isEU(){
             if let value = json["event_phases"] as? [String:Any]{
-                for item in value {
+//            if let value = try? JSONSerialization.jsonObject(with: "{\"1\":[\"1\",\"3\"],\"2\":[\"2\",\"6\"]}".data(using: .utf8)!) as! [String:Any]{
+                let eventTypes =  listValues["CODE_EVENT_TYPE"] as! [[String:String]]
+                let phaseTypes = listValues["CODE_FLOW_PHASE"] as!  [[String:String]]
+                
+                for item in value {//Duyet danh sach cac key
                     let idEvent = item.key
-                    let eventTypes =  listValues["CODE_EVENT_TYPE"] as! [String:String]
+                    
                     var nameEvent = ""
-                    if let value = eventTypes[idEvent]{
-                        nameEvent = value
+                    //Lay ten event
+                    for event in eventTypes{
+                        if idEvent == event["value"]{
+                            nameEvent = event["text"]!
+                            break
+                        }
                     }
+                    //Duyet danh sach value(id phase) ung voi key event
                     for item2  in item.value as! [String]{
                         let idFlow = item2
-                        let flowTypes = listValues["CODE_FLOW_PHASE"] as! [String:String]
+                        
                         var nameFlow = ""
-                        if let value = flowTypes[idFlow]{
-                            nameFlow = value
-                             listPhase.append(PhaseObject(idEvent: idEvent, nameEvent: nameEvent, idFlow: idFlow, nameFlow: nameFlow))
+                        //Lay ten phase
+                        for phase in phaseTypes{
+                            if idFlow == phase["value"]{
+                                nameFlow = phase["text"]!
+                                break
+                            }
                         }
+                        
+                        listPhase.append(PhaseObject(idEvent: idEvent, nameEvent: nameEvent, idFlow: idFlow, nameFlow: nameFlow))
                        
                     }
                 }
@@ -158,7 +176,7 @@ class ObjectAttrs{
     var controlType = ""
     var enable = true
     var mandatory = false
-    var list = [String:String]()
+    //var list = [String:String]()
     var listObjectVisible =  [String]()
     var listObject = [ListObject]()
     var value = ""
@@ -215,11 +233,14 @@ class ObjectAttrs{
         }
         
         if let value = json["list"] as? String{
-            if let list = listValues[value] as? [String:String]{
-                self.list = list
-                for item in list{
-                    listObject.append(ListObject(key: item.key, name: item.value))
-                    listObjectVisible.append(item.value)
+            if let list = listValues[value] as? [[String:Any]]{
+//                self.list = list
+                for i in 0..<list.count{
+                    let item = list[i] as! [String:String]
+                    listObject.append(ListObject(key: item["value"]!, name: item["text"]!))
+                    
+                    listObjectVisible.append(item["text"]!)
+                    
                 }
             }
         }

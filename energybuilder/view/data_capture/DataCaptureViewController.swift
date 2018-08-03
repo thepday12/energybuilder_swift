@@ -109,11 +109,15 @@ class DataCaptureViewController: BaseController {
             self.lbValueObjectVisible.text = item
             self.selection = index
             self.updateTitle()
+                //Xoa toan bo du lieu occur date -> ngay hien tai
+            self.clearData(from: 0)
+                //Tao lai form va load du lieu vao field
+            self.loadDataFromDataObjects()
+                //Thay doi operation tuong ung
             if self.type == "EU"{
                 self.updateCellOperation(index: index)
             }
-            
-            self.loadDataFromDataObjects()
+           
             } catch let error {
                 print(error.localizedDescription)
                 showDialogMessage(viewController: self, title: "Error", message: error.localizedDescription)

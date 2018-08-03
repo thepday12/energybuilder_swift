@@ -264,19 +264,29 @@ func setCompletePoint(pointObj:Point,complete:Bool)->[String:Any]{
     let dataConfig =  getDataConfig()
     if var json = try? JSONSerialization.jsonObject(with: dataConfig.data(using: .utf8)!) as![String:Any]{
         //Update complete cho Points
-        var points = json["points"] as! [String:Any]
-        var point = points[pointObj.key] as! [String:Any]
+        var points = json["points"] as! [[String:Any]]
+        var point = [String:Any]()
+        var position = 0
+        for i in 0..<points.count{
+            let item = points[i]
+            if pointObj.key == item["key"] as!String {
+                point = item
+                position = i
+                break
+            }
+        }
         point ["complete"] = complete
-        points[pointObj.key] = point
+        points[position] = point
         json["points"] =  points
         //Update so luong complete cho Routes
-        var routes = json["routes"] as! [String:Any]
-        for item in routes{
-            var route = item.value as! [String:Any]
+        var routes = json["routes"] as! [[String:Any]]
+        
+        for i in 0..<routes.count{
+            var route = routes[i]
             if route["id"] as! String == pointObj.routeId{
                 var completeCount = 0
                 for item2 in points{
-                    let pt = item2.value as! [String:Any]
+                    let pt = item2
                     if pt["route_id"] as! String == pointObj.routeId {
                         if pt["complete"] as! Bool == true {
                             completeCount += 1
@@ -286,7 +296,7 @@ func setCompletePoint(pointObj:Point,complete:Bool)->[String:Any]{
                 
                 route["complete"] = completeCount.stringValue
                 
-                routes[item.key] = route
+                routes[i] = route
                 break
             }
         }

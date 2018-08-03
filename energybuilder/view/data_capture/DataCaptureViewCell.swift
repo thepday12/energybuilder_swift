@@ -229,7 +229,7 @@ class DataCaptureViewCell: UITableViewCell {
                 self.updateValue()
                 let viewController = self.viewController as! DataCaptureViewController
                 if self.index == 0{
-                viewController.loadDataFromDataObjects(dateValue: dateValue)
+                    viewController.loadDataFromDataObjects(dateValue: dateValue)
                 }
             }
         }
@@ -263,7 +263,7 @@ class DataCaptureViewCell: UITableViewCell {
             }
             if listValue.count > 0{
                 let dialog = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "dialogNumberChart") as! DialogNumberChart
-                dialog.objName = label.text!
+                dialog.objName = objectAttr.name
                 dialog.listValue = listValue
                 showViewDialog(viewController: self.viewController!, dialog: dialog, opacity: 0.75)
             }

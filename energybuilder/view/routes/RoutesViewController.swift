@@ -29,11 +29,11 @@ class RoutesViewController: BaseController {
         let data = jsonString.data(using: .utf8)!
         
         if let json = try? JSONSerialization.jsonObject(with: data) as![String:Any]{
-            let values = json["routes"] as![String:Any]
+            let values = json["routes"] as![[String:Any]]
             for item  in values{
-                let jsonRoute = item.value as! [String:Any]
+                let jsonRoute = item 
                 if jsonRoute["total"] as! String != "0"{
-                    routes.append(Route(key:item.key,json: jsonRoute))
+                    routes.append(Route(json: jsonRoute))
                 }
             }
             objects =  json["objects"] as![String:Any]
