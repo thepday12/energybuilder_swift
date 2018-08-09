@@ -14,6 +14,7 @@ let SERVER_URL_KEY = "server_url"
 let DATA_TYPE_KEY = "data_type"
 let HISTORY_DAYS_KEY = "history_days"
 let USER_TOKEN_KEY = "user_token"
+let USER_NAME_KEY = "user_name"
 let DATA_CONFIG_KEY = "data_config"
 let OBJECT_DETAILS_KEY = "object_detail"
 let UPLOAD_DATA_KEY = "upload_data"
@@ -231,7 +232,25 @@ func getUploadData()->String{
     return result
 }
 
+func setUserName(data:String){
+    let preferences = UserDefaults.standard
+    preferences.set(data, forKey: USER_NAME_KEY)
+     preferences.synchronize()
+}
 
+func getUserName()->String{
+    let preferences = UserDefaults.standard
+    var result = ""
+    if let value = preferences.string(forKey: USER_NAME_KEY){
+        let defaultValue = preferences.string(forKey: DEFAULT_VALUE_KEY)
+        if value == defaultValue {
+            return ""
+        }else{
+            result = value
+        }
+    }
+    return result
+}
 
 func logout()->Bool{
     

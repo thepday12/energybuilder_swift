@@ -62,9 +62,13 @@ class ViewController: BaseController {
         if userToken.isEmpty{
             moveLogin()
         }else{
-            if logout(){
-                updateLoginButton()
-            }
+            showDialogConfirm(viewController: self, title: "Login", content: "Are your sure you want to Logout?",handler:{ (action: UIAlertAction!) in
+                if logout(){
+                    self.updateLoginButton()
+                }
+            })
+        
+            
         }
         
     }

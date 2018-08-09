@@ -56,6 +56,7 @@ class DialogNumberChart: UIViewController, ChartViewDelegate {
             tmpList.append(listValue[i])
         }
         
+        let valuesNumberFormatter = ChartValueFormatter()
         for i in 0..<tmpList.count{
             let value = tmpList[i].value
             let dataEntry = ChartDataEntry(x: Double(i), y: value.doubleValue)
@@ -64,7 +65,9 @@ class DialogNumberChart: UIViewController, ChartViewDelegate {
         }
         let line = LineChartDataSet(values: lineChartEntry, label: " ")
         //        line.circleColors = [UIColor.blue]
-       
+        //format value
+        line.valueFormatter = valuesNumberFormatter
+        
         let data = LineChartData(dataSet: line)
         //        line.colors = [UIColor.red]
         chartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
@@ -88,6 +91,7 @@ class DialogNumberChart: UIViewController, ChartViewDelegate {
         chartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
         chartView.legend.enabled = false
         chartView.animate(xAxisDuration: 0.5)
+        
         chartView.data = data
     }
     

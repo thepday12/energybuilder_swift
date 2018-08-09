@@ -310,6 +310,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "downloadConfigHandler(viewController:isDismiss:):NetworkHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getHistoryDays()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LoginViewController.clickLogin(_:):LoginViewController.swift">
          <PersistentStrings>
             <PersistentString

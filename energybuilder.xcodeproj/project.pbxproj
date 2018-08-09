@@ -10,6 +10,7 @@
 		70EC413ACA42579DB81A473C /* Pods_energybuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 963701853C42656141E92550 /* Pods_energybuilder.framework */; };
 		8705C77620D65E9A00C9496F /* RoutesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705C77520D65E9A00C9496F /* RoutesCell.swift */; };
 		8705C77920D66F8F00C9496F /* AllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705C77820D66F8F00C9496F /* AllModel.swift */; };
+		87066BE1211445A000A82D5B /* ChartValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87066BE0211445A000A82D5B /* ChartValueFormatter.swift */; };
 		870B1D6C20D3C3CF004DA1B4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870B1D6B20D3C3CF004DA1B4 /* Extension.swift */; };
 		87275DA720D53C1D008AA626 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87275DA620D53C1D008AA626 /* LoginViewController.swift */; };
 		87275DA920D53DA2008AA626 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87275DA820D53DA2008AA626 /* NetworkHelper.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		8705C77520D65E9A00C9496F /* RoutesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesCell.swift; sourceTree = "<group>"; };
 		8705C77820D66F8F00C9496F /* AllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllModel.swift; sourceTree = "<group>"; };
+		87066BE0211445A000A82D5B /* ChartValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartValueFormatter.swift; sourceTree = "<group>"; };
 		870B1D6B20D3C3CF004DA1B4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		87275DA620D53C1D008AA626 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		87275DA820D53DA2008AA626 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				8737E07420D3714500DEEAEF /* Utils.swift */,
 				870B1D6B20D3C3CF004DA1B4 /* Extension.swift */,
 				87275DA820D53DA2008AA626 /* NetworkHelper.swift */,
+				87066BE0211445A000A82D5B /* ChartValueFormatter.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			files = (
 				870B1D6C20D3C3CF004DA1B4 /* Extension.swift in Sources */,
 				87CF7D9820EE0C5400876882 /* DialogNumberChart.swift in Sources */,
+				87066BE1211445A000A82D5B /* ChartValueFormatter.swift in Sources */,
 				8705C77620D65E9A00C9496F /* RoutesCell.swift in Sources */,
 				873CAA3120D36607007912EF /* ViewController.swift in Sources */,
 				87B3BD2F20D769D500BAC4D1 /* PointViewCell.swift in Sources */,
