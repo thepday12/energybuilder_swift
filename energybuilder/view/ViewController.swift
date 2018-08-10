@@ -8,7 +8,6 @@
 
 import UIKit
 
-let notificationMoveRoutes = "move.routes"
 class ViewController: BaseController {
     
     @IBOutlet weak var btRoutes: UIButton!
@@ -62,7 +61,7 @@ class ViewController: BaseController {
         if userToken.isEmpty{
             moveLogin()
         }else{
-            showDialogConfirm(viewController: self, title: "Login", content: "Are your sure you want to Logout?",handler:{ (action: UIAlertAction!) in
+            showDialogConfirm(viewController: self, title: "Login", content: "Are you sure you want to Logout?",handler:{ (action: UIAlertAction!) in
                 if logout(){
                     self.updateLoginButton()
                 }

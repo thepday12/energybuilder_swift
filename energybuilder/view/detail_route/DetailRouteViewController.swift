@@ -18,6 +18,7 @@ class DetailRouteViewController: BaseController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     override func viewDidLoad() {
+         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: notificationPointComplete),object: nil,queue: nil, using:handlerComplete)
         super.viewDidLoad()
         btResetRoute.setRadiusForButton()
         if !route.key.isEmpty{
@@ -30,6 +31,9 @@ class DetailRouteViewController: BaseController {
         reload()
     }
     
+    func handlerComplete(notification: Notification){
+        self.view.makeToast("Point completed")
+    }
     
     func reload(){
         var points = [Point]()

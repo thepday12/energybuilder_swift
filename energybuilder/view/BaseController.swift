@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 let ACTION_DOWNLOAD = "ACTION_DOWNLOAD"
 let ACTION_UPLOAD = "ACTION_UPLOAD"
+let notificationMoveRoutes = "move.routes"
+let notificationPointComplete = "complete"
 class BaseController:UIViewController,UINavigationControllerDelegate{
     
     

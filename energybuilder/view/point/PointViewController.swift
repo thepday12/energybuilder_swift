@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class PointViewController: BaseController {
     var point = Point()
@@ -41,14 +42,20 @@ class PointViewController: BaseController {
     }
     
     
+    
+    
     @IBAction func completeClick(_ sender: Any) {
-        if completePoint(point: self.point, complete: true){
-            showDialogMessage(viewController: self, title: "Point", message: "Point completed",  handler: { (action: UIAlertAction!) in
-                self.dismiss(animated: true, completion: nil)
-            })
-        }else{
-            showDialogErrorSaveData(viewController: self)
-        }
+        
+        showDialogConfirm(viewController: self, title: "Point", content: "Are you sure you want to complete?",handler:{ (action: UIAlertAction!) in
+            if completePoint(point: self.point, complete: true){
+                self.dismiss(animated: true, completion: {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationPointComplete), object: nil, userInfo: nil)
+                })
+            }else{
+                showDialogErrorSaveData(viewController: self)
+            }
+        })
+       
         
     }
     
