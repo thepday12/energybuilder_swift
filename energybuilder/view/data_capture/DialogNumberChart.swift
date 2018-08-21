@@ -15,6 +15,7 @@ class DialogNumberChart: UIViewController, ChartViewDelegate {
     @IBOutlet weak var chartView: LineChartView!
     
     var objName = ""
+    var decimals = 0
     var listValue = [ObjectNumber]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,7 @@ class DialogNumberChart: UIViewController, ChartViewDelegate {
             tmpList.append(listValue[i])
         }
         
-        let valuesNumberFormatter = ChartValueFormatter()
+        let valuesNumberFormatter = ChartValueFormatter(decimals: decimals)
         for i in 0..<tmpList.count{
             let value = tmpList[i].value
             let dataEntry = ChartDataEntry(x: Double(i), y: value.doubleValue)

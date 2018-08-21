@@ -110,6 +110,7 @@ class ObjectData{
     var id = ""
     var name = ""
     var type = ""
+    var inputFreq = "DAY"//DAY||MON
     var listPhase = [PhaseObject]()
     init(){
         
@@ -124,6 +125,9 @@ class ObjectData{
         }
         if let value = json["type"] as? String{
             self.type = value
+        }
+        if let value = json["input_freq"] as? String{
+            self.inputFreq = value
         }
         
         if isEU(){
@@ -180,6 +184,8 @@ class ObjectAttrs{
     var listObjectVisible =  [String]()
     var listObject = [ListObject]()
     var value = ""
+    var format = ""//
+    var decimals = 0
     var objectData = ObjectData()
     init(){
         
@@ -231,6 +237,15 @@ class ObjectAttrs{
         if let value = json["mandatory"] as? Bool{
             self.mandatory = value
         }
+        
+       
+        if let value = json["format"] as? String{
+            self.format = value
+        }
+        if let value = json["decimals"] as? Int{
+            self.decimals = value
+        }
+        
         
         if let value = json["list"] as? String{
             if let list = listValues[value] as? [[String:Any]]{

@@ -9,13 +9,16 @@
 import Foundation
 import Charts
 class ChartValueFormatter: NSObject, IValueFormatter {
-
-    
+    var decimals = 0
+    convenience init(decimals:Int) {
+        self.init()
+        self.decimals = decimals
+    }
     convenience init(numberFormatter: NumberFormatter) {
         self.init()
     }
     
     func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
-        return value.getTextRatesFormat
+        return value.getTextRatesFormat(decimals: decimals)
     }
 }

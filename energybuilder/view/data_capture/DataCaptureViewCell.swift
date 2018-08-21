@@ -19,11 +19,10 @@ class DataCaptureViewCell: UITableViewCell {
     @IBOutlet weak var btValue: UIButton!
     var objectAttr = ObjectAttrs()
     @IBOutlet weak var etValue: UITextField!
-   
     let dropDown = DropDown()
     var index = 0
     var indexDropdown = 0
-    var type = ""
+    var type = ""   
     var listValue = [ObjectNumber]()//Dung de lay danh sach du lieu da luu
     var objectData:ObjectData = ObjectData()
     override func awakeFromNib() {
@@ -42,41 +41,27 @@ class DataCaptureViewCell: UITableViewCell {
         }
         label.text = labelValue
         label.textColor = UIColor.black
-          etValue.delegate = nil
+        etValue.delegate = nil
+        
+        
+        
+        //Set enable
+        btValue.isEnabled = objectAttr.enable
+        etValue.isEnabled = objectAttr.enable
+        
         switch objectAttr.controlType {
         case "n":
             etValue.isHidden = false
             viewDropdown.isHidden = true
-            etValue.isEnabled = objectAttr.enable
             etValue.keyboardType = UIKeyboardType.decimalPad
-            etValue.text = objectAttr.value.formatDecimalValueWithLocation
+            etValue.text = objectAttr.value.formatDecimalValueWithLocation(decimals: objectAttr.decimals)
             etValue.delegate = self
             label.textColor = UIColor.blue
-//            if !objectDetails.isEmpty{
-//                if let json = try? JSONSerialization.jsonObject(with: objectDetails.data(using: .utf8)!) as![String:Any]{
-//                    let id = type+"_"+objectData.id
-//                     listValue = [ObjectNumber]()
-
-//                     let view = self.viewController as! DataCaptureViewController
-//                    let endWith = ""
-//                    for item in json{
-//                        if item.key.starts(with: id) && item.key.reversed().starts(with: endWith.reversed()){
-//                            let jsonValue = item.value as! [String:String]
-//                            if let value = jsonValue[objectAttr.key]{
-//                                var occurDate = item.key.components(separatedBy: "_")[2]
-//
-//                                listValue.append(ObjectNumber(value: value, occurDate:occurDate ))
-//                            }
-//                        }
-//                    }
-                    label.clickListener(myTarget: self, myAction: #selector(showDialog))
-//                }
-//            }
+            label.clickListener(myTarget: self, myAction: #selector(showDialog))
             break
         case "t":
             etValue.isHidden = false
             viewDropdown.isHidden = true
-            etValue.isEnabled = objectAttr.enable
             etValue.keyboardType = .default
             etValue.text = objectAttr.value
             break
@@ -85,7 +70,6 @@ class DataCaptureViewCell: UITableViewCell {
             etValue.isHidden = true
             ivDropdown.image = #imageLiteral(resourceName: "ic_date")
             viewDropdown.setBackgroundDropdown()
-            btValue.isEnabled = objectAttr.enable
             var value = getCurrentDate()
             if objectAttr.value.isEmpty{
                 objectAttr.value = value
@@ -99,7 +83,6 @@ class DataCaptureViewCell: UITableViewCell {
             ivDropdown.image = #imageLiteral(resourceName: "ic_dropdown")
             etValue.isHidden = true
             viewDropdown.setBackgroundDropdown()
-            btValue.isEnabled = objectAttr.enable
             createViewDropdown()
             
             break
@@ -131,21 +114,21 @@ class DataCaptureViewCell: UITableViewCell {
     }
     
     func createViewDropdown(){
-//        listObjectVisible =  [String]()
-//        let objectData =  objectAttr.objectData
-//        if self.index == 1 && type == "EU"{
-//            for item in objectData.listPhase{
-//                listObjectVisible.append(item.getName())
-//                listObject.append(ListObject(key: item.getPhaseCode(),name: item.getName()))
-//            }
-//
-//        }else{
-////            let values = listValue[objectAttr.list] as! [String:String]
-//            for item in objectAttr.list{
-//                listObject.append(ListObject(key: item.key, name: item.value))
-//                listObjectVisible.append(item.value)
-//            }
-//        }
+        //        listObjectVisible =  [String]()
+        //        let objectData =  objectAttr.objectData
+        //        if self.index == 1 && type == "EU"{
+        //            for item in objectData.listPhase{
+        //                listObjectVisible.append(item.getName())
+        //                listObject.append(ListObject(key: item.getPhaseCode(),name: item.getName()))
+        //            }
+        //
+        //        }else{
+        ////            let values = listValue[objectAttr.list] as! [String:String]
+        //            for item in objectAttr.list{
+        //                listObject.append(ListObject(key: item.key, name: item.value))
+        //                listObjectVisible.append(item.value)
+        //            }
+        //        }
         
         dropDown.anchorView = btValue
         dropDown.dataSource  = objectAttr.listObjectVisible
@@ -154,9 +137,9 @@ class DataCaptureViewCell: UITableViewCell {
         if objectAttr.value.isEmpty{
             objectAttr.value = value
         }else{
-             value = objectAttr.value
+            value = objectAttr.value
         }
-      
+        
         for item in objectAttr.listObject{
             if item.key == value {
                 name = item.name
@@ -208,7 +191,7 @@ class DataCaptureViewCell: UITableViewCell {
             if let value = lbValue.text{
                 for item in objectAttr.listObject{
                     if item.name == value {
-                         result = item.key
+                        result = item.key
                         break
                     }
                 }
@@ -253,7 +236,7 @@ class DataCaptureViewCell: UITableViewCell {
                     let jsonValue = item.value as! [String:String]
                     if let value = jsonValue[objectAttr.key]{
                         if !value.isEmpty {
-                        var occurDate = item.key.components(separatedBy: "_")[2]
+                            var occurDate = item.key.components(separatedBy: "_")[2]
                             if !occurDate.isEmpty{
                                 listValue.append(ObjectNumber(value: value, occurDate:occurDate ))
                             }
@@ -263,6 +246,7 @@ class DataCaptureViewCell: UITableViewCell {
             }
             if listValue.count > 0{
                 let dialog = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "dialogNumberChart") as! DialogNumberChart
+                dialog.decimals = objectAttr.decimals
                 dialog.objName = objectAttr.name
                 dialog.listValue = listValue
                 showViewDialog(viewController: self.viewController!, dialog: dialog, opacity: 0.75)

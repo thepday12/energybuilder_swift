@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 extension String {
-    
+    func countMatches(string:String)->Int{
+        let leng = self.count
+        let newLeng = self.replacingOccurrences(of: string, with: "").count
+        return leng - newLeng
+    }
     func contains(find: String) -> Bool{
         return self.range(of: find) != nil
     }
@@ -47,12 +51,16 @@ extension String {
 //        return
 //    }
     
-    var formatDecimalValueWithLocation:String{
+    func formatDecimalValueWithLocation(decimals:Int)->String{
+        if self.isEmpty{
+            return ""
+        }
+        let text = self.doubleValue.getTextRatesFormat(decimals: decimals)
         let formatter = NumberFormatter()
         formatter.locale = NSLocale.current
         formatter.allowsFloats = true // Default is true, be explicit anyways
         let decimalSeparator = formatter.decimalSeparator ?? "."
-        return self.replacingOccurrences(of: ".", with: decimalSeparator)
+        return text.replacingOccurrences(of: ".", with: decimalSeparator)
     }
     
     
@@ -242,10 +250,14 @@ extension Double {
         return  String(self)
     }
     
-    var getTextRatesFormat:String{
-        let doubleStr = String(format: "%.2f", self)
+    func getTextRatesFormat(decimals:Int)->String{
+//        let myFormat = format.countMatches(string: <#T##String#>)
+      //  let doubleStr = String(format: "%.2f", self)
+        let format = "%." + decimals.stringValue + "f"
+        let doubleStr = String(format: format, self)
         return doubleStr
     }
+    
     var getTextDateTimeFormat:String{
         var result = ""
         let date:Date = Date(timeIntervalSince1970: self)

@@ -95,7 +95,6 @@ class DataCaptureViewController: BaseController {
         
         
         
-        
         viewDropdown.setBackgroundDropdown()
         lbValueObjectVisible.text = listObjectVisible[0]
         
@@ -104,20 +103,27 @@ class DataCaptureViewController: BaseController {
         
         // The list of items to display. Can be changed dynamically
         dropDown.dataSource = listObjectVisible
+        
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             do{
-            self.lbValueObjectVisible.text = item
-            self.selection = index
-            self.updateTitle()
+                self.lbValueObjectVisible.text = item
+                self.selection = index
+                self.updateTitle()
+                
+                
+                if self.checkInputFreq(){
+                    self.showWarningInputFreq()
+                }
+                
                 //Xoa toan bo du lieu occur date -> ngay hien tai
-            self.clearData(from: 0)
+                self.clearData(from: 0)
                 //Tao lai form va load du lieu vao field
-            self.loadDataFromDataObjects()
+                self.loadDataFromDataObjects()
                 //Thay doi operation tuong ung
-            if self.type == "EU"{
-                self.updateCellOperation(index: index)
-            }
-           
+                if self.type == "EU"{
+                    self.updateCellOperation(index: index)
+                }
+                
             } catch let error {
                 print(error.localizedDescription)
                 showDialogMessage(viewController: self, title: "Error", message: error.localizedDescription)
@@ -125,6 +131,27 @@ class DataCaptureViewController: BaseController {
             
         }
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        //Kiem tra hien thi inputFreq
+        if self.checkInputFreq(){
+            self.showWarningInputFreq()
+        }
+    }
+    
+    
+    /*Kiem tra enable
+     neu dang dc enable
+     inputFreq = "MON" thi ngay hien tai la 01 thi moi duoc phep nhap
+     */
+    func checkInputFreq()->Bool{
+        let currentDay:String = String(getCurrentDate().split(separator: "-")[2])
+        let object  = listObject[selection]
+        return object.inputFreq == "MON" && currentDay.intValue != 1
+    }
+    
+    func showWarningInputFreq(){
+        showDialogMessage(viewController: self, title: "Warning", message: "Only update the first day of the month")
     }
     
     /**
@@ -161,7 +188,7 @@ class DataCaptureViewController: BaseController {
                             }
                         }
                     }
-                   
+                    
                 }else{
                     clearData(from: position)
                 }
@@ -169,11 +196,11 @@ class DataCaptureViewController: BaseController {
             }else{
                 clearData(from: position)
             }
-//            if !(dateValue?.isEmpty)! {
-//                listObjectAttr[0].value = dateValue!
-//            }else{
-//                listObjectAttr[0].value = getCurrentDate()
-//            }
+            //            if !(dateValue?.isEmpty)! {
+            //                listObjectAttr[0].value = dateValue!
+            //            }else{
+            //                listObjectAttr[0].value = getCurrentDate()
+            //            }
             tableView.reloadData()
             
         }
@@ -213,70 +240,72 @@ class DataCaptureViewController: BaseController {
     }
     
     @IBAction func saveClick(_ sender: Any) {
-       
-        var listValueCreateJson = listObjectAttr
-       
-        
-        //Tao ID De save
-        let id = getId()
-        //Khong lay tham so Occur date
-        listValueCreateJson.remove(at: 0)
-        if type == "EU"{
-            //Khong lay tham so Operation
+        if self.checkInputFreq(){
+            self.showWarningInputFreq()
+        }else{
+            var listValueCreateJson = listObjectAttr
+            
+            
+            //Tao ID De save
+            let id = getId()
+            //Khong lay tham so Occur date
             listValueCreateJson.remove(at: 0)
-        }
-        //Kiem tra du lieu truoc khi save
-        if dataValid(){
-            var contentValue = ""
-            //Lay Du lieu
-            for cell in listValueCreateJson{
-                if !cell.value.isEmpty{
-                    contentValue += cell.getJsonValue() + ","
+            if type == "EU"{
+                //Khong lay tham so Operation
+                listValueCreateJson.remove(at: 0)
+            }
+            //Kiem tra du lieu truoc khi save
+            if dataValid(){
+                var contentValue = ""
+                //Lay Du lieu
+                for cell in listValueCreateJson{
+                    if !cell.value.isEmpty{
+                        contentValue += cell.getJsonValue() + ","
+                    }
                 }
+                
+                //            //Xoa dau "," cuoi cung
+                //            saveData = String(saveData.dropLast())
+                if contentValue.isEmpty{
+                    return
+                }
+                //Hoan thanh JSon
+                contentValue = "{"+contentValue+"\"editted\":\"1\"}"
+                let saveData = "{\""+id+"\":"+contentValue+"}"
+                let uploadData = getUploadData()
+                if uploadData.isEmpty{
+                    saveDataUpload(data: saveData)
+                }else{
+                    let data = uploadData.data(using: .utf8)!
+                    if var json = try? JSONSerialization.jsonObject(with: data) as![String:Any]{
+                        
+                        let dataJson = try? JSONSerialization.jsonObject(with: contentValue.data(using: .utf8)!) as![String:Any]
+                        json[id] = dataJson
+                        saveDataUpload(data: jsonToString(dictionary: json))
+                    }
+                }
+                saveObjectDetails(data: saveData)
+            }else{
+                showDialogMessage(viewController: self, title: "Warning", message: "You must fill in all of the fields (*). ")
             }
             
-            //            //Xoa dau "," cuoi cung
-            //            saveData = String(saveData.dropLast())
-            if contentValue.isEmpty{
-                return
-            }
-            //Hoan thanh JSon
-            contentValue = "{"+contentValue+"\"editted\":\"1\"}"
-            let saveData = "{\""+id+"\":"+contentValue+"}"
-            let uploadData = getUploadData()
-            if uploadData.isEmpty{
-                saveDataUpload(data: saveData)
-            }else{
-                let data = uploadData.data(using: .utf8)!
-                if var json = try? JSONSerialization.jsonObject(with: data) as![String:Any]{
-                    
-                    let dataJson = try? JSONSerialization.jsonObject(with: contentValue.data(using: .utf8)!) as![String:Any]
-                    json[id] = dataJson
-                    saveDataUpload(data: jsonToString(dictionary: json))
-                }
-            }
-            saveObjectDetails(data: saveData)
-        }else{
-            showDialogMessage(viewController: self, title: "Warning", message: "You must fill in all of the fields (*). ")
         }
-        
-        
     }
     func getId()->String{
         let object  = listObject[selection]
         let date = listObjectAttr[0]
-       
+        
         
         var id = type+"_"+object.id+"_"+date.value
         if type=="EU"{
             let phase = listObjectAttr[1]
             var phaseCode = phase.value
-//            for item in object.listPhase{
-//                if item.getName() == phase.value{
-//                    phaseCode = item.getPhaseCode()
-//                    break
-//                }
-//            }
+            //            for item in object.listPhase{
+            //                if item.getName() == phase.value{
+            //                    phaseCode = item.getPhaseCode()
+            //                    break
+            //                }
+            //            }
             if phaseCode.isEmpty{
                 phaseCode = object.listPhase[0].getPhaseCode()
             }
