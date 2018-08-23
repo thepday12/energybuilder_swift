@@ -110,11 +110,6 @@ class DataCaptureViewController: BaseController {
                 self.selection = index
                 self.updateTitle()
                 
-                
-                if self.checkInputFreq(){
-                    self.showWarningInputFreq()
-                }
-                
                 //Xoa toan bo du lieu occur date -> ngay hien tai
                 self.clearData(from: 0)
                 //Tao lai form va load du lieu vao field
@@ -134,9 +129,9 @@ class DataCaptureViewController: BaseController {
     }
     override func viewDidAppear(_ animated: Bool) {
         //Kiem tra hien thi inputFreq
-        if self.checkInputFreq(){
-            self.showWarningInputFreq()
-        }
+//        if self.checkInputFreq(){
+//            self.showWarningInputFreq()
+//        }
     }
     
     
@@ -145,7 +140,7 @@ class DataCaptureViewController: BaseController {
      inputFreq = "MON" thi ngay hien tai la 01 thi moi duoc phep nhap
      */
     func checkInputFreq()->Bool{
-        let currentDay:String = String(getCurrentDate().split(separator: "-")[2])
+        let currentDay:String = String(listObjectAttr[0].value.split(separator: "-")[2])
         let object  = listObject[selection]
         return object.inputFreq == "MON" && currentDay.intValue != 1
     }
@@ -175,6 +170,7 @@ class DataCaptureViewController: BaseController {
             if(type=="EU"){
                 position = 2//khong doi tham so Occur date va operation
             }
+            let isEnable = !checkInputFreq()
             //Lay du lieu tu ID
             if var json = try? JSONSerialization.jsonObject(with: dataObjects.data(using: .utf8)!) as![String:Any]{
                 
@@ -184,6 +180,7 @@ class DataCaptureViewController: BaseController {
                         for item in listObjectAttr {
                             if item.key == data.key{
                                 item.value = data.value as! String
+                                item.enable = isEnable
                                 break
                             }
                         }
@@ -376,14 +373,17 @@ class DataCaptureViewController: BaseController {
     }
     
     func clearData(from:Int){
+        let isEnable = !checkInputFreq()
         for i in from..<listObjectAttr.count{
             let item = listObjectAttr[i]
             if i == 0{
                 item.value = getCurrentDate()
             }else if item.controlType == "l"{
                 item.value = item.listObject[0].key
+                item.enable = isEnable
             }else{
                 item.value = ""
+                item.enable = isEnable
             }
         }
     }
